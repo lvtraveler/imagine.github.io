@@ -268,6 +268,216 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/20/【01】前端开发环境配置/" itemprop="url">
+                  fis-plus【01】——前端开发环境配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-20T10:43:48+08:00" content="2016-03-20">
+              2016-03-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自动化工具/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/20/【01】前端开发环境配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/【01】前端开发环境配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="fis-plus【01】——前端开发环境配置"><a href="#fis-plus【01】——前端开发环境配置" class="headerlink" title="fis-plus【01】——前端开发环境配置"></a>fis-plus【01】——前端开发环境配置</h1><p>前端自动化工具确实给前端同学带来的极大的方便，这一篇中我们将通过介绍fis-plus来配置前端的开发环境。</p>
+<p>av8d,请坐好哦~</p>
+<p><img src="./img/gaoxiao01.jpeg" alt="alt text"></p>
+<h2 id="一、fis-plus引入"><a href="#一、fis-plus引入" class="headerlink" title="一、fis-plus引入"></a>一、fis-plus引入</h2><blockquote>
+<p>fis-plus能够把前端当做整个PHP的开发环境来渲染，包括它能对smarty的开发环境能够很好的支持。<br>官网网站：<br><a href="http://fex-team.github.io/fis-plus/" target="_blank" rel="external">fis-plus</a></p>
+</blockquote>
+<p>首先我们进行安装</p>
+<p>在命令行输入：<code>npm install -g fis-plus</code></p>
+<p>如果你在安装过程中遇到网络问题，安装不成功，你可以通过淘宝镜像进行安装。<br>淘宝镜像安装教程参照：<br>[<a href="http://npm.taobao.org/" target="_blank" rel="external">http://npm.taobao.org/</a>]</p>
+<p>安装完cnpm，之后执行 <code>cnpm install -g fis-plus</code></p>
+<p>查看是否安装成功：<br>在命令行输入： <code>fisp -v</code></p>
+<p>如有下图所示，则表示成功：</p>
+<p><img src="./img/fisp01.png" alt="alt text"></p>
+<blockquote>
+<p>在fisp的官网首页，我们看到fisp提供能很完善的解决方案，这个比gulp或是grunt都要来的出色。在平时，如果要写这些PHP smaty的解决方案，是需要花费很大成本的，现在通过fisp来节约我们的开发和优化时间。</p>
+</blockquote>
+<p><strong>注释:</strong> smarty是一个使用PHP写出来的模板PHP模板引擎，它提供了逻辑与外在内容的分离，简单的讲，目的就是要使用PHP程序员同美工分离,使用的程序员改变程序的逻辑内容不会影响到美工的页面设计，美工重新修改页面不会影响到程序的程序逻辑，这在多人合作的项目中显的尤为重要。</p>
+<p><img src="./img/fisp02.png" alt="alt text"></p>
+<h2 id="二、fis-plus是做什么的？"><a href="#二、fis-plus是做什么的？" class="headerlink" title="二、fis-plus是做什么的？"></a>二、fis-plus是做什么的？</h2><p><img src="./img/gaoxiao02.jpeg" alt="alt text"></p>
+<blockquote>
+<p>FIS-PLUS 是基于 FIS，应用于后端是 PHP，模板是 Smarty 的场景,是扩展自FIS的前端集成解决方案。其提供 后端框架、前端框架、自动化工具、辅助开发工具等开发套件。</p>
+</blockquote>
+<p>在安装fis-plus之前，fis-plus对环境有要求：</p>
+<ul>
+<li>（1）安装node ,&gt;=0.8.0的版本；</li>
+<li>（2）jre版本，&gt;=1.5.0,用于本地调式</li>
+<li>（3）php-cgi版本，&gt;=5.0.0，用于本地调式</li>
+</ul>
+<p>说一下php-cgi的安装，这里我们通过Brew来安装，<br>首先你需要安装brew,官网：<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a>。</p>
+<p>在命令行输入：</p>
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code>进行安装。</p>
+<p>安装成功之后，在命令行输入：<code>brew install php55 --with-cgi</code>安装php-cgi。</p>
+<p>上面的三个环境都安装完成之后，我们在命令行输入：</p>
+<p><code>fisp server start</code>你就能看到如下结果，这时会启动fisp 的调式服务器。</p>
+<p><img src="./img/fisp03.png" alt="alt text"></p>
+<p>浏览器也会打开：</p>
+<p><img src="./img/fisp04.png" alt="alt text"></p>
+<p>在上图，你可以看到这个目录的路径。</p>
+<p>现在我们进入到这个文件夹中 <code>cd /Users/imaginexie/.fis-plus-tmp/www</code></p>
+<p>然后看一下这个目录下有什么文件：<code>dir</code>，然后打开这个目录<code>open .</code></p>
+<p><img src="./img/fisp05.png" alt="alt text"></p>
+<p>当然啦~这个目录只是本地server目录，但是其实，当我们在线上开发的时候，我们有一个真正的server。</p>
+<p>fis-plus支持把线下（本地）的资源直接放到线上。</p>
+<h3 id="2-1、lights"><a href="#2-1、lights" class="headerlink" title="2.1、lights"></a>2.1、lights</h3><p>说道这里，你是不是睡着了？？？让你睡~</p>
+<p><img src="./img/gaoxiao03.jpeg" alt="alt text"></p>
+<p>lights 是 fis 提供的包管理工具，托管了 fis 所有资源。是使用 fis 的时候，必不可少的利器。</p>
+<p>首先我们安装lights:<code>npm install -g lights</code></p>
+<p>然后下载一个PC端案例：我们在桌面上安装 <code>lights install pc-demo</code></p>
+<p>安装成功之后，你的桌面上会出现一个pc-demo的文件夹。</p>
+<p>OK，现在我们来打开这个pc-demo目录，看看它都包含了哪些东西。</p>
+<p><img src="./img/fisp06.png" alt="alt text"></p>
+<blockquote>
+<p>在这个文件夹中，我们看到，common和home目录下都有一个fis-conf.js配置文件。</p>
+<p>在common（common文件夹是所有静态资源的结合）的fis-conf.js中我们看到：</p>
+<p>配置文件对css和js进行了打包（pack），打包到了static/pkg这个目录下。<br>home目录下也是同理。</p>
+</blockquote>
+<p>然后我们再看看home目录下，page/index.tpl这个模板文件：</p>
+<p><img src="./img/fisp07.png" alt="alt text"></p>
+<p>我们看到这里面使用了require对静态资源进行加载。这个require模块加载主要用到的是fis自己写的mod.js，它也是一个类似于require.js或sea.js的模块化脚本。mod.js属于cmd规范。这个源码理解起来不然，你可以看下，因为mod.js主要是用来加载资源的。</p>
+<p>然后我们再来看下common/page/layout.tpl</p>
+<p><img src="./img/fisp08.png" alt="alt text"></p>
+<p>page其实主要是用来组装widge文件下的widget组件。只是对页面进行渲染，而不负责输出。</p>
+<p>再来看下package.json这个文件：</p>
+<p><img src="./img/fisp09.png" alt="alt text"></p>
+<p>这些文件在编译的时候会编译成smaty对应的文件夹，以及一个静态的文件夹。</p>
+<p>现在我们来发布这个PC-demo。</p>
+<p>在pc-demo目录下，命令行分别输入<code>fisp release -r common</code></p>
+<p><code>fisp release -r home</code>，即，对common和home这两个目录进行发布（release）。</p>
+<p>发布完成之后，命令行输入：<code>fisp server start</code>来启动服务器。</p>
+<p>这个时候我们在浏览器上看到的还是这个：</p>
+<p><img src="./img/fisp10.png" alt="alt text"></p>
+<p><strong>你可能会疑惑，怎么啥变化没有呀？？？</strong></p>
+<p>hold住~我们进入到pc-demo 的www目录下查看下发生了什么：</p>
+<p><code>cd /Users/imaginexie/.fis-plus-tmp/www</code></p>
+<p>我们看到如下：</p>
+<p><img src="./img/fisp11.png" alt="alt text"></p>
+<p><img src="./img/fisp12.png" alt="alt text"></p>
+<p>这些文件把我们前端的东西都打包了过来。对比之前我们在进行<code>fisp server start</code>的时候，是不是发生了很大的变化。</p>
+<p>这里生成了一个static文件夹，对应生成了common和home目录。如图：</p>
+<p><img src="./img/fisp13.png" alt="alt text"></p>
+<p>啊哈~马上要大功告成啦~感动啊</p>
+<p><img src="./img/gaoxiao04.jpeg" alt="alt text"></p>
+<blockquote>
+<p>现在，我们把www这个文件夹拽到sublime中。然后对默认的首页index.php进行重命名：index_w.php。即&gt; 把默认的首页去除。</p>
+<p>然后，我们在命令行输入<code>cd ..</code>先退出www目录，返回到上级，然后执行<code>fisp server init</code>初始化模拟线上环境。</p>
+</blockquote>
+<p>我们再到浏览器来刷新一下 127.0.0.1:8080。这个时候你会看到：</p>
+<p><img src="./img/fisp14.png" alt="alt text"></p>
+<p>这就是fis给我提供的pc-demo的网站。</p>
+<p>下面我们来了解下fis-plus发布（release）的时候用到的命令。<br>输入<code>fisp release -h</code>可以看到fis-plus release为我们提供了如下：</p>
+<p><img src="./img/fisp15.png" alt="alt text"></p>
+<p>其中，都做了详细的解释。你可以按着上面的命令选项进行尝试，同时这些命令可以同时组合使用，例如<code>fisp release -Domupld</code>。</p>
+<blockquote>
+<p>Ok ,以上是关于fis-plus在前端开发中得环境配置，但是我们还需要配置后端的开发环境，下一节我们将深入&gt; 讲解fis-plus和后端的环境配置。</p>
+</blockquote>
+<p><img src="./img/gaoxiao05.jpeg" alt="alt text"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/19/start/" itemprop="url">
                   start 2016.03.19
                 </a>
@@ -405,7 +615,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -413,7 +623,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -422,7 +632,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvtraveler.github.io/"/>
-  <updated>2016-03-19T15:45:39.000Z</updated>
+  <updated>2016-03-20T09:48:39.000Z</updated>
   <id>http://lvtraveler.github.io/</id>
   
   <author>
@@ -14,6 +14,126 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fis-plus【01】——前端开发环境配置</title>
+    <link href="http://lvtraveler.github.io/2016/03/20/%E3%80%9001%E3%80%91%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://lvtraveler.github.io/2016/03/20/【01】前端开发环境配置/</id>
+    <published>2016-03-20T02:43:48.000Z</published>
+    <updated>2016-03-20T09:48:39.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;fis-plus【01】——前端开发环境配置&quot;&gt;&lt;a href=&quot;#fis-plus【01】——前端开发环境配置&quot; class=&quot;headerlink&quot; title=&quot;fis-plus【01】——前端开发环境配置&quot;&gt;&lt;/a&gt;fis-plus【01】——前端开发环境配置&lt;/h1&gt;&lt;p&gt;前端自动化工具确实给前端同学带来的极大的方便，这一篇中我们将通过介绍fis-plus来配置前端的开发环境。&lt;/p&gt;
+&lt;p&gt;av8d,请坐好哦~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/gaoxiao01.jpeg&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;一、fis-plus引入&quot;&gt;&lt;a href=&quot;#一、fis-plus引入&quot; class=&quot;headerlink&quot; title=&quot;一、fis-plus引入&quot;&gt;&lt;/a&gt;一、fis-plus引入&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;fis-plus能够把前端当做整个PHP的开发环境来渲染，包括它能对smarty的开发环境能够很好的支持。&lt;br&gt;官网网站：&lt;br&gt;&lt;a href=&quot;http://fex-team.github.io/fis-plus/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;fis-plus&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先我们进行安装&lt;/p&gt;
+&lt;p&gt;在命令行输入：&lt;code&gt;npm install -g fis-plus&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果你在安装过程中遇到网络问题，安装不成功，你可以通过淘宝镜像进行安装。&lt;br&gt;淘宝镜像安装教程参照：&lt;br&gt;[&lt;a href=&quot;http://npm.taobao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://npm.taobao.org/&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;安装完cnpm，之后执行 &lt;code&gt;cnpm install -g fis-plus&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查看是否安装成功：&lt;br&gt;在命令行输入： &lt;code&gt;fisp -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如有下图所示，则表示成功：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp01.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在fisp的官网首页，我们看到fisp提供能很完善的解决方案，这个比gulp或是grunt都要来的出色。在平时，如果要写这些PHP smaty的解决方案，是需要花费很大成本的，现在通过fisp来节约我们的开发和优化时间。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注释:&lt;/strong&gt; smarty是一个使用PHP写出来的模板PHP模板引擎，它提供了逻辑与外在内容的分离，简单的讲，目的就是要使用PHP程序员同美工分离,使用的程序员改变程序的逻辑内容不会影响到美工的页面设计，美工重新修改页面不会影响到程序的程序逻辑，这在多人合作的项目中显的尤为重要。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp02.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;二、fis-plus是做什么的？&quot;&gt;&lt;a href=&quot;#二、fis-plus是做什么的？&quot; class=&quot;headerlink&quot; title=&quot;二、fis-plus是做什么的？&quot;&gt;&lt;/a&gt;二、fis-plus是做什么的？&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;./img/gaoxiao02.jpeg&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FIS-PLUS 是基于 FIS，应用于后端是 PHP，模板是 Smarty 的场景,是扩展自FIS的前端集成解决方案。其提供 后端框架、前端框架、自动化工具、辅助开发工具等开发套件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在安装fis-plus之前，fis-plus对环境有要求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（1）安装node ,&amp;gt;=0.8.0的版本；&lt;/li&gt;
+&lt;li&gt;（2）jre版本，&amp;gt;=1.5.0,用于本地调式&lt;/li&gt;
+&lt;li&gt;（3）php-cgi版本，&amp;gt;=5.0.0，用于本地调式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;说一下php-cgi的安装，这里我们通过Brew来安装，&lt;br&gt;首先你需要安装brew,官网：&lt;a href=&quot;http://brew.sh/index_zh-cn.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;homebrew&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在命令行输入：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/code&gt;进行安装。&lt;/p&gt;
+&lt;p&gt;安装成功之后，在命令行输入：&lt;code&gt;brew install php55 --with-cgi&lt;/code&gt;安装php-cgi。&lt;/p&gt;
+&lt;p&gt;上面的三个环境都安装完成之后，我们在命令行输入：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fisp server start&lt;/code&gt;你就能看到如下结果，这时会启动fisp 的调式服务器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp03.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;浏览器也会打开：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp04.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在上图，你可以看到这个目录的路径。&lt;/p&gt;
+&lt;p&gt;现在我们进入到这个文件夹中 &lt;code&gt;cd /Users/imaginexie/.fis-plus-tmp/www&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后看一下这个目录下有什么文件：&lt;code&gt;dir&lt;/code&gt;，然后打开这个目录&lt;code&gt;open .&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp05.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当然啦~这个目录只是本地server目录，但是其实，当我们在线上开发的时候，我们有一个真正的server。&lt;/p&gt;
+&lt;p&gt;fis-plus支持把线下（本地）的资源直接放到线上。&lt;/p&gt;
+&lt;h3 id=&quot;2-1、lights&quot;&gt;&lt;a href=&quot;#2-1、lights&quot; class=&quot;headerlink&quot; title=&quot;2.1、lights&quot;&gt;&lt;/a&gt;2.1、lights&lt;/h3&gt;&lt;p&gt;说道这里，你是不是睡着了？？？让你睡~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/gaoxiao03.jpeg&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;lights 是 fis 提供的包管理工具，托管了 fis 所有资源。是使用 fis 的时候，必不可少的利器。&lt;/p&gt;
+&lt;p&gt;首先我们安装lights:&lt;code&gt;npm install -g lights&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后下载一个PC端案例：我们在桌面上安装 &lt;code&gt;lights install pc-demo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;安装成功之后，你的桌面上会出现一个pc-demo的文件夹。&lt;/p&gt;
+&lt;p&gt;OK，现在我们来打开这个pc-demo目录，看看它都包含了哪些东西。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp06.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在这个文件夹中，我们看到，common和home目录下都有一个fis-conf.js配置文件。&lt;/p&gt;
+&lt;p&gt;在common（common文件夹是所有静态资源的结合）的fis-conf.js中我们看到：&lt;/p&gt;
+&lt;p&gt;配置文件对css和js进行了打包（pack），打包到了static/pkg这个目录下。&lt;br&gt;home目录下也是同理。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后我们再看看home目录下，page/index.tpl这个模板文件：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp07.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们看到这里面使用了require对静态资源进行加载。这个require模块加载主要用到的是fis自己写的mod.js，它也是一个类似于require.js或sea.js的模块化脚本。mod.js属于cmd规范。这个源码理解起来不然，你可以看下，因为mod.js主要是用来加载资源的。&lt;/p&gt;
+&lt;p&gt;然后我们再来看下common/page/layout.tpl&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp08.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;page其实主要是用来组装widge文件下的widget组件。只是对页面进行渲染，而不负责输出。&lt;/p&gt;
+&lt;p&gt;再来看下package.json这个文件：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp09.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这些文件在编译的时候会编译成smaty对应的文件夹，以及一个静态的文件夹。&lt;/p&gt;
+&lt;p&gt;现在我们来发布这个PC-demo。&lt;/p&gt;
+&lt;p&gt;在pc-demo目录下，命令行分别输入&lt;code&gt;fisp release -r common&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fisp release -r home&lt;/code&gt;，即，对common和home这两个目录进行发布（release）。&lt;/p&gt;
+&lt;p&gt;发布完成之后，命令行输入：&lt;code&gt;fisp server start&lt;/code&gt;来启动服务器。&lt;/p&gt;
+&lt;p&gt;这个时候我们在浏览器上看到的还是这个：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp10.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;你可能会疑惑，怎么啥变化没有呀？？？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;hold住~我们进入到pc-demo 的www目录下查看下发生了什么：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd /Users/imaginexie/.fis-plus-tmp/www&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们看到如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp11.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp12.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这些文件把我们前端的东西都打包了过来。对比之前我们在进行&lt;code&gt;fisp server start&lt;/code&gt;的时候，是不是发生了很大的变化。&lt;/p&gt;
+&lt;p&gt;这里生成了一个static文件夹，对应生成了common和home目录。如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp13.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;啊哈~马上要大功告成啦~感动啊&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/gaoxiao04.jpeg&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;现在，我们把www这个文件夹拽到sublime中。然后对默认的首页index.php进行重命名：index_w.php。即&amp;gt; 把默认的首页去除。&lt;/p&gt;
+&lt;p&gt;然后，我们在命令行输入&lt;code&gt;cd ..&lt;/code&gt;先退出www目录，返回到上级，然后执行&lt;code&gt;fisp server init&lt;/code&gt;初始化模拟线上环境。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们再到浏览器来刷新一下 127.0.0.1:8080。这个时候你会看到：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp14.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这就是fis给我提供的pc-demo的网站。&lt;/p&gt;
+&lt;p&gt;下面我们来了解下fis-plus发布（release）的时候用到的命令。&lt;br&gt;输入&lt;code&gt;fisp release -h&lt;/code&gt;可以看到fis-plus release为我们提供了如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/fisp15.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其中，都做了详细的解释。你可以按着上面的命令选项进行尝试，同时这些命令可以同时组合使用，例如&lt;code&gt;fisp release -Domupld&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ok ,以上是关于fis-plus在前端开发中得环境配置，但是我们还需要配置后端的开发环境，下一节我们将深入&amp;gt; 讲解fis-plus和后端的环境配置。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;./img/gaoxiao05.jpeg&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;fis-plus【01】——前端开发环境配置&quot;&gt;&lt;a href=&quot;#fis-plus【01】——前端开发环境配置&quot; class=&quot;headerlink&quot; title=&quot;fis-plus【01】——前端开发环境配置&quot;&gt;&lt;/a&gt;fis-plus【01】——前端开发环境
+    
+    </summary>
+    
+      <category term="自动化工具" scheme="http://lvtraveler.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="fis-plus" scheme="http://lvtraveler.github.io/tags/fis-plus/"/>
+    
+      <category term="前端自动化工具" scheme="http://lvtraveler.github.io/tags/%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>start 2016.03.19</title>

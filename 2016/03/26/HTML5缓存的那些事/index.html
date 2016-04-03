@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HTML5,缓存,性能," />
 
 
 
@@ -59,15 +59,39 @@
 
 
 
-<meta name="description" content="this is imagine life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Imagine">
-<meta property="og:url" content="http://lvtraveler.github.io/index.html">
+<meta name="description" content="关于存储说道存储，你可能会想到这是服务器端的一种设置。
+服务器端的存储介质大体上分为4种：
+
+cache:缓存，它可以让从数据库、磁盘上输出的东西/数据放置在缓存里，从而减少数据库或是磁盘的读取与写入（IO）操作；
+磁盘文件：如，我们常常会将图片、视频等文件存放在磁盘上；
+数据库：mySql\mongoDB…关系\非关系数据库；
+内存：通常放置频繁要使用到的东西，能够提高读取效率；缓存（cache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5缓存的那些事">
+<meta property="og:url" content="http://lvtraveler.github.io/2016/03/26/HTML5缓存的那些事/index.html">
 <meta property="og:site_name" content="Imagine">
-<meta property="og:description" content="this is imagine life">
+<meta property="og:description" content="关于存储说道存储，你可能会想到这是服务器端的一种设置。
+服务器端的存储介质大体上分为4种：
+
+cache:缓存，它可以让从数据库、磁盘上输出的东西/数据放置在缓存里，从而减少数据库或是磁盘的读取与写入（IO）操作；
+磁盘文件：如，我们常常会将图片、视频等文件存放在磁盘上；
+数据库：mySql\mongoDB…关系\非关系数据库；
+内存：通常放置频繁要使用到的东西，能够提高读取效率；缓存（cache">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/h5_cache/cc01.png">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/h5_cache/cc03.png">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/h5_cache/cc04.png">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/h5_cache/cc05.png">
+<meta property="og:updated_time" content="2016-04-03T13:25:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Imagine">
-<meta name="twitter:description" content="this is imagine life">
+<meta name="twitter:title" content="HTML5缓存的那些事">
+<meta name="twitter:description" content="关于存储说道存储，你可能会想到这是服务器端的一种设置。
+服务器端的存储介质大体上分为4种：
+
+cache:缓存，它可以让从数据库、磁盘上输出的东西/数据放置在缓存里，从而减少数据库或是磁盘的读取与写入（IO）操作；
+磁盘文件：如，我们常常会将图片、视频等文件存放在磁盘上；
+数据库：mySql\mongoDB…关系\非关系数据库；
+内存：通常放置频繁要使用到的东西，能够提高读取效率；缓存（cache">
+<meta name="twitter:image" content="http://lvtraveler.github.io/./img/h5_cache/cc01.png">
 
 
 
@@ -85,7 +109,7 @@
   };
 </script>
 
-  <title> Imagine </title>
+  <title> HTML5缓存的那些事 | Imagine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -116,9 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +267,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -267,10 +289,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/26/HTML5缓存的那些事/" itemprop="url">
-                  HTML5缓存的那些事
-                </a>
+                HTML5缓存的那些事
               
             
           </h1>
@@ -335,9 +354,7 @@
       
 
       
-        
-          
-            <h2 id="关于存储"><a href="#关于存储" class="headerlink" title="关于存储"></a>关于存储</h2><p>说道存储，你可能会想到这是服务器端的一种设置。</p>
+        <h2 id="关于存储"><a href="#关于存储" class="headerlink" title="关于存储"></a>关于存储</h2><p>说道存储，你可能会想到这是服务器端的一种设置。</p>
 <p>服务器端的存储介质大体上分为4种：</p>
 <ul>
 <li>cache:缓存，它可以让从数据库、磁盘上输出的东西/数据放置在缓存里，从而减少数据库或是磁盘的读取与写入（IO）操作；</li>
@@ -835,359 +852,74 @@ FALLBACK
 <p>关于HTML5缓存我们就介绍到这里。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://rainsilence.iteye.com/blog/984569" target="_blank" rel="external">HTML5之IndexedDB使用详解</a></p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/20/【01】前端开发环境配置/" itemprop="url">
-                  fis-plus【01】——前端开发环境配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T10:43:48+08:00" content="2016-03-20">
-              2016-03-20
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自动化工具/" itemprop="url" rel="index">
-                    <span itemprop="name">自动化工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
           
-
+            <a href="/tags/缓存/" rel="tag">#缓存</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/20/【01】前端开发环境配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/【01】前端开发环境配置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/性能/" rel="tag">#性能</a>
           
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="fis-plus【01】——前端开发环境配置"><a href="#fis-plus【01】——前端开发环境配置" class="headerlink" title="fis-plus【01】——前端开发环境配置"></a>fis-plus【01】——前端开发环境配置</h1><p>前端自动化工具确实给前端同学带来的极大的方便，这一篇中我们将通过介绍fis-plus来配置前端的开发环境。</p>
-<p>av8d,请坐好哦~</p>
-<p><img src="./img/gaoxiao01.jpeg" alt="alt text"></p>
-<h2 id="一、fis-plus引入"><a href="#一、fis-plus引入" class="headerlink" title="一、fis-plus引入"></a>一、fis-plus引入</h2><blockquote>
-<p>fis-plus能够把前端当做整个PHP的开发环境来渲染，包括它能对smarty的开发环境能够很好的支持。<br>官网网站：<br><a href="http://fex-team.github.io/fis-plus/" target="_blank" rel="external">fis-plus</a></p>
-</blockquote>
-<p>首先我们进行安装</p>
-<p>在命令行输入：<code>npm install -g fis-plus</code></p>
-<p>如果你在安装过程中遇到网络问题，安装不成功，你可以通过淘宝镜像进行安装。<br>淘宝镜像安装教程参照：<br>[<a href="http://npm.taobao.org/" target="_blank" rel="external">http://npm.taobao.org/</a>]</p>
-<p>安装完cnpm，之后执行 <code>cnpm install -g fis-plus</code></p>
-<p>查看是否安装成功：<br>在命令行输入： <code>fisp -v</code></p>
-<p>如有下图所示，则表示成功：</p>
-<p><img src="./img/fisp01.png" alt="alt text"></p>
-<blockquote>
-<p>在fisp的官网首页，我们看到fisp提供能很完善的解决方案，这个比gulp或是grunt都要来的出色。在平时，如果要写这些PHP smaty的解决方案，是需要花费很大成本的，现在通过fisp来节约我们的开发和优化时间。</p>
-</blockquote>
-<p><strong>注释:</strong> smarty是一个使用PHP写出来的模板PHP模板引擎，它提供了逻辑与外在内容的分离，简单的讲，目的就是要使用PHP程序员同美工分离,使用的程序员改变程序的逻辑内容不会影响到美工的页面设计，美工重新修改页面不会影响到程序的程序逻辑，这在多人合作的项目中显的尤为重要。</p>
-<p><img src="./img/fisp02.png" alt="alt text"></p>
-<h2 id="二、fis-plus是做什么的？"><a href="#二、fis-plus是做什么的？" class="headerlink" title="二、fis-plus是做什么的？"></a>二、fis-plus是做什么的？</h2><p><img src="./img/gaoxiao02.jpeg" alt="alt text"></p>
-<blockquote>
-<p>FIS-PLUS 是基于 FIS，应用于后端是 PHP，模板是 Smarty 的场景,是扩展自FIS的前端集成解决方案。其提供 后端框架、前端框架、自动化工具、辅助开发工具等开发套件。</p>
-</blockquote>
-<p>在安装fis-plus之前，fis-plus对环境有要求：</p>
-<ul>
-<li>（1）安装node ,&gt;=0.8.0的版本；</li>
-<li>（2）jre版本，&gt;=1.5.0,用于本地调式</li>
-<li>（3）php-cgi版本，&gt;=5.0.0，用于本地调式</li>
-</ul>
-<p>说一下php-cgi的安装，这里我们通过Brew来安装，<br>首先你需要安装brew,官网：<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a>。</p>
-<p>在命令行输入：</p>
-<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code>进行安装。</p>
-<p>安装成功之后，在命令行输入：<code>brew install php55 --with-cgi</code>安装php-cgi。</p>
-<p>上面的三个环境都安装完成之后，我们在命令行输入：</p>
-<p><code>fisp server start</code>你就能看到如下结果，这时会启动fisp 的调式服务器。</p>
-<p><img src="./img/fisp03.png" alt="alt text"></p>
-<p>浏览器也会打开：</p>
-<p><img src="./img/fisp04.png" alt="alt text"></p>
-<p>在上图，你可以看到这个目录的路径。</p>
-<p>现在我们进入到这个文件夹中 <code>cd /Users/imaginexie/.fis-plus-tmp/www</code></p>
-<p>然后看一下这个目录下有什么文件：<code>dir</code>，然后打开这个目录<code>open .</code></p>
-<p><img src="./img/fisp05.png" alt="alt text"></p>
-<p>当然啦~这个目录只是本地server目录，但是其实，当我们在线上开发的时候，我们有一个真正的server。</p>
-<p>fis-plus支持把线下（本地）的资源直接放到线上。</p>
-<h3 id="2-1、lights"><a href="#2-1、lights" class="headerlink" title="2.1、lights"></a>2.1、lights</h3><p>说道这里，你是不是睡着了？？？让你睡~</p>
-<p><img src="./img/gaoxiao03.jpeg" alt="alt text"></p>
-<p>lights 是 fis 提供的包管理工具，托管了 fis 所有资源。是使用 fis 的时候，必不可少的利器。</p>
-<p>首先我们安装lights:<code>npm install -g lights</code></p>
-<p>然后下载一个PC端案例：我们在桌面上安装 <code>lights install pc-demo</code></p>
-<p>安装成功之后，你的桌面上会出现一个pc-demo的文件夹。</p>
-<p>OK，现在我们来打开这个pc-demo目录，看看它都包含了哪些东西。</p>
-<p><img src="./img/fisp06.png" alt="alt text"></p>
-<blockquote>
-<p>在这个文件夹中，我们看到，common和home目录下都有一个fis-conf.js配置文件。</p>
-<p>在common（common文件夹是所有静态资源的结合）的fis-conf.js中我们看到：</p>
-<p>配置文件对css和js进行了打包（pack），打包到了static/pkg这个目录下。<br>home目录下也是同理。</p>
-</blockquote>
-<p>然后我们再看看home目录下，page/index.tpl这个模板文件：</p>
-<p><img src="./img/fisp07.png" alt="alt text"></p>
-<p>我们看到这里面使用了require对静态资源进行加载。这个require模块加载主要用到的是fis自己写的mod.js，它也是一个类似于require.js或sea.js的模块化脚本。mod.js属于cmd规范。这个源码理解起来不然，你可以看下，因为mod.js主要是用来加载资源的。</p>
-<p>然后我们再来看下common/page/layout.tpl</p>
-<p><img src="./img/fisp08.png" alt="alt text"></p>
-<p>page其实主要是用来组装widge文件下的widget组件。只是对页面进行渲染，而不负责输出。</p>
-<p>再来看下package.json这个文件：</p>
-<p><img src="./img/fisp09.png" alt="alt text"></p>
-<p>这些文件在编译的时候会编译成smaty对应的文件夹，以及一个静态的文件夹。</p>
-<p>现在我们来发布这个PC-demo。</p>
-<p>在pc-demo目录下，命令行分别输入<code>fisp release -r common</code></p>
-<p><code>fisp release -r home</code>，即，对common和home这两个目录进行发布（release）。</p>
-<p>发布完成之后，命令行输入：<code>fisp server start</code>来启动服务器。</p>
-<p>这个时候我们在浏览器上看到的还是这个：</p>
-<p><img src="./img/fisp10.png" alt="alt text"></p>
-<p><strong>你可能会疑惑，怎么啥变化没有呀？？？</strong></p>
-<p>hold住~我们进入到pc-demo 的www目录下查看下发生了什么：</p>
-<p><code>cd /Users/imaginexie/.fis-plus-tmp/www</code></p>
-<p>我们看到如下：</p>
-<p><img src="./img/fisp11.png" alt="alt text"></p>
-<p><img src="./img/fisp12.png" alt="alt text"></p>
-<p>这些文件把我们前端的东西都打包了过来。对比之前我们在进行<code>fisp server start</code>的时候，是不是发生了很大的变化。</p>
-<p>这里生成了一个static文件夹，对应生成了common和home目录。如图：</p>
-<p><img src="./img/fisp13.png" alt="alt text"></p>
-<p>啊哈~马上要大功告成啦~感动啊</p>
-<p><img src="./img/gaoxiao04.jpeg" alt="alt text"></p>
-<blockquote>
-<p>现在，我们把www这个文件夹拽到sublime中。然后对默认的首页index.php进行重命名：index_w.php。即&gt; 把默认的首页去除。</p>
-<p>然后，我们在命令行输入<code>cd ..</code>先退出www目录，返回到上级，然后执行<code>fisp server init</code>初始化模拟线上环境。</p>
-</blockquote>
-<p>我们再到浏览器来刷新一下 127.0.0.1:8080。这个时候你会看到：</p>
-<p><img src="./img/fisp14.png" alt="alt text"></p>
-<p>这就是fis给我提供的pc-demo的网站。</p>
-<p>下面我们来了解下fis-plus发布（release）的时候用到的命令。<br>输入<code>fisp release -h</code>可以看到fis-plus release为我们提供了如下：</p>
-<p><img src="./img/fisp15.png" alt="alt text"></p>
-<p>其中，都做了详细的解释。你可以按着上面的命令选项进行尝试，同时这些命令可以同时组合使用，例如<code>fisp release -Domupld</code>。</p>
-<blockquote>
-<p>Ok ,以上是关于fis-plus在前端开发中得环境配置，但是我们还需要配置后端的开发环境，下一节我们将深入&gt; 讲解fis-plus和后端的环境配置。</p>
-</blockquote>
-<p><img src="./img/gaoxiao05.jpeg" alt="alt text"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/20/【01】前端开发环境配置/" rel="next" title="fis-plus【01】——前端开发环境配置">
+                <i class="fa fa-chevron-left"></i> fis-plus【01】——前端开发环境配置
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/03/19/start/" itemprop="url">
-                  start 2016.03.19
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T21:01:47+08:00" content="2016-03-19">
-              2016-03-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/19/start/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/start/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>从今天起，慢慢将blog从CSDN、豆瓣迁移到这里，在CSDN、豆瓣上的blog会陆续更新这里的blog,以后就在这里静心记录我的生活、工作、学习。</p>
-<p>还是那句话，脚踏实地，技术很纯粹，生活很简单。我们一起加油！</p>
-<p>welcome to imagine-life, nice to meet you.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/26/HTML5缓存的那些事/"
+     data-title="HTML5缓存的那些事"
+     data-content=""
+     data-url="http://lvtraveler.github.io/2016/03/26/HTML5缓存的那些事/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1195,6 +927,14 @@ FALLBACK
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/26/HTML5缓存的那些事/"
+           data-title="HTML5缓存的那些事" data-url="http://lvtraveler.github.io/2016/03/26/HTML5缓存的那些事/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1214,8 +954,17 @@ FALLBACK
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar2.png"
@@ -1301,6 +1050,23 @@ FALLBACK
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于存储"><span class="nav-number">1.</span> <span class="nav-text">关于存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML的存储-cookies"><span class="nav-number">1.1.</span> <span class="nav-text">HTML的存储-cookies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML的存储-UserData"><span class="nav-number">1.2.</span> <span class="nav-text">HTML的存储-UserData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5的存储"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5的存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储"><span class="nav-number">1.4.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储可以存储什么？"><span class="nav-number">1.5.</span> <span class="nav-text">本地存储可以存储什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储如何存储图片"><span class="nav-number">1.6.</span> <span class="nav-text">本地存储如何存储图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5本地存储需要注意的："><span class="nav-number">1.7.</span> <span class="nav-text">HTML5本地存储需要注意的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5本地存储使用限制："><span class="nav-number">1.8.</span> <span class="nav-text">HTML5本地存储使用限制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理过期控制"><span class="nav-number">1.9.</span> <span class="nav-text">处理过期控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储使用场景"><span class="nav-number">1.10.</span> <span class="nav-text">本地存储使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IndexedDB"><span class="nav-number">2.</span> <span class="nav-text">IndexedDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持情况"><span class="nav-number">2.2.</span> <span class="nav-text">支持情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储结构"><span class="nav-number">2.3.</span> <span class="nav-text">存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用IndexedDB实现离线数据库"><span class="nav-number">2.4.</span> <span class="nav-text">使用IndexedDB实现离线数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线缓存——application-Cache"><span class="nav-number">3.</span> <span class="nav-text">离线缓存——application Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为离线缓存"><span class="nav-number">3.1.</span> <span class="nav-text">何为离线缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">3.2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器支持情况"><span class="nav-number">3.3.</span> <span class="nav-text">浏览器支持情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">3.4.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-cache优势："><span class="nav-number">3.5.</span> <span class="nav-text">app cache优势：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-cache缺陷："><span class="nav-number">3.6.</span> <span class="nav-text">app cache缺陷：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-cache适用场景"><span class="nav-number">3.7.</span> <span class="nav-text">app cache适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -1392,6 +1158,167 @@ FALLBACK
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 

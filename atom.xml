@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvtraveler.github.io/"/>
-  <updated>2016-03-20T09:48:39.000Z</updated>
+  <updated>2016-04-03T13:25:04.000Z</updated>
   <id>http://lvtraveler.github.io/</id>
   
   <author>
@@ -14,6 +14,532 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML5缓存的那些事</title>
+    <link href="http://lvtraveler.github.io/2016/03/26/HTML5%E7%BC%93%E5%AD%98%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>http://lvtraveler.github.io/2016/03/26/HTML5缓存的那些事/</id>
+    <published>2016-03-26T05:34:46.000Z</published>
+    <updated>2016-04-03T13:25:04.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;关于存储&quot;&gt;&lt;a href=&quot;#关于存储&quot; class=&quot;headerlink&quot; title=&quot;关于存储&quot;&gt;&lt;/a&gt;关于存储&lt;/h2&gt;&lt;p&gt;说道存储，你可能会想到这是服务器端的一种设置。&lt;/p&gt;
+&lt;p&gt;服务器端的存储介质大体上分为4种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cache:缓存，它可以让从数据库、磁盘上输出的东西/数据放置在缓存里，从而减少数据库或是磁盘的读取与写入（IO）操作；&lt;/li&gt;
+&lt;li&gt;磁盘文件：如，我们常常会将图片、视频等文件存放在磁盘上；&lt;/li&gt;
+&lt;li&gt;数据库：mySql\mongoDB…关系\非关系数据库；&lt;/li&gt;
+&lt;li&gt;内存：通常放置频繁要使用到的东西，能够提高读取效率；缓存（cache）也是存放在内存里的；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HTML的存储-cookies&quot;&gt;&lt;a href=&quot;#HTML的存储-cookies&quot; class=&quot;headerlink&quot; title=&quot;HTML的存储-cookies&quot;&gt;&lt;/a&gt;HTML的存储-cookies&lt;/h3&gt;&lt;p&gt;在HTML5出生之前，通常在浏览器（客户端）使用cookies来存储客户端的内容；&lt;/p&gt;
+&lt;p&gt;cookies的特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每次的http请求头中，都会带有cookies——缺点；&lt;/li&gt;
+&lt;li&gt;每个域名只能存储4K大小的cookies;&lt;/li&gt;
+&lt;li&gt;主域名污染：如果我们使用cookies存储主域名的东西，那么子域名下得Http请求都会带上主域名的东西；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果关联上网络，那么将带来安全问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所以，通常我们会使用cookies用在如购物车、身份验证等问题上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面，我们来看一下百度首页的cookies在浏览器端的一个存储形态:&lt;/p&gt;
+&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/h5_cache/cc01.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;HTTP这一列，如果在setCookie的时候，这里就会打钩，这与HTTPOnly相关。&lt;/p&gt;
+&lt;p&gt;HTTPOnly：&lt;/p&gt;
+&lt;p&gt;如果把HTTPOnly设置为true,那么cookies只能被server服务器端来读取或是修改，客户端没有权限进行读取和修改。例如，我们在进行身份验证的时候，就可以使用这个。&lt;/p&gt;
+&lt;p&gt;Secure：与安全相关，如果设置了，那么请求只能是来自HTTP加密请求。&lt;/p&gt;
+&lt;h3 id=&quot;HTML的存储-UserData&quot;&gt;&lt;a href=&quot;#HTML的存储-UserData&quot; class=&quot;headerlink&quot; title=&quot;HTML的存储-UserData&quot;&gt;&lt;/a&gt;HTML的存储-UserData&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;只有IE支持，有微软提供API，但不符合W3C标准；&lt;/li&gt;
+&lt;li&gt;存储在XML文件中；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HTML5的存储&quot;&gt;&lt;a href=&quot;#HTML5的存储&quot; class=&quot;headerlink&quot; title=&quot;HTML5的存储&quot;&gt;&lt;/a&gt;HTML5的存储&lt;/h3&gt;&lt;p&gt;针对以上问题，HTML5的出现，需要解决以下问题:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解决4K的大小问题；&lt;/li&gt;
+&lt;li&gt;解决请求头常带存储信息的问题；&lt;/li&gt;
+&lt;li&gt;解决关系型存储的问题；&lt;/li&gt;
+&lt;li&gt;跨浏览器平台问题；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##HTML5存储形式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地存储——localstorage \sessionstorage&lt;/li&gt;
+&lt;li&gt;离线缓存——application cache&lt;/li&gt;
+&lt;li&gt;IndexedDB、Web SQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;本地存储&quot;&gt;&lt;a href=&quot;#本地存储&quot; class=&quot;headerlink&quot; title=&quot;本地存储&quot;&gt;&lt;/a&gt;本地存储&lt;/h3&gt;&lt;p&gt;API：&lt;/p&gt;
+&lt;p&gt;localstorage 、sessionstorage&lt;/p&gt;
+&lt;p&gt;存储形式：&lt;/p&gt;
+&lt;p&gt;key–&amp;gt;value&lt;/p&gt;
+&lt;p&gt;过期时间：&lt;/p&gt;
+&lt;p&gt;localstorage:永久存储，永不失效，除非手动删除&lt;br&gt;sessionstorage:重新打开页面，或是关闭浏览器，sessionstorage才会消失；&lt;/p&gt;
+&lt;p&gt;存储大小：&lt;br&gt;每个域名能存5M；&lt;/p&gt;
+&lt;p&gt;支持情况：&lt;/p&gt;
+&lt;p&gt;IE8+,safari3.2+,chrome,firefox等主流浏览器都支持；&lt;/p&gt;
+&lt;p&gt;使用方法——localstorage\sessionstorage&lt;/p&gt;
+&lt;p&gt;主要涉及到5个方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getItem:获取localstorage\sessionstorage&lt;/li&gt;
+&lt;li&gt;setItem:设置localstorage\sessionstorage&lt;/li&gt;
+&lt;li&gt;removeItem:移除localstorage\sessionstorage&lt;/li&gt;
+&lt;li&gt;key:获取某一个位置上的key值,按值从0开始索引；&lt;/li&gt;
+&lt;li&gt;clear:全部清除localstorage\sessionstorage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：我们打开www.baidu.com&lt;/p&gt;
+&lt;p&gt;在控制台Console输出面板，输入：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;localStorage.setItem(&amp;quot;test1&amp;quot;,&amp;quot;test&amp;quot;);&lt;/code&gt;&lt;br&gt;那么在Resources面板的Local Storage下，将出现Key=test1,value=test的记录&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;localStorage.getItem(&amp;quot;test1&amp;quot;);&lt;/code&gt; //输出test&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;localStorage.key(0);&lt;/code&gt;//输出BDSUGSTORED&lt;/p&gt;
+&lt;p&gt;sessionstorage的API与localstorage一样，但是你要注意一点：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sessionStorage需要在浏览器关闭或是重新打开页面，才会消失；&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;本地存储可以存储什么？&quot;&gt;&lt;a href=&quot;#本地存储可以存储什么？&quot; class=&quot;headerlink&quot; title=&quot;本地存储可以存储什么？&quot;&gt;&lt;/a&gt;本地存储可以存储什么？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;数组（需要将其序列化为字符串才能存储）；&lt;/li&gt;
+&lt;li&gt;json数据——将其转化为字符串存储；&lt;/li&gt;
+&lt;li&gt;图片&lt;/li&gt;
+&lt;li&gt;脚本、样式文件：通过ajax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;只要能被转化为字符串的数据，都能被localstorage存储；&lt;/p&gt;
+&lt;h3 id=&quot;本地存储如何存储图片&quot;&gt;&lt;a href=&quot;#本地存储如何存储图片&quot; class=&quot;headerlink&quot; title=&quot;本地存储如何存储图片&quot;&gt;&lt;/a&gt;本地存储如何存储图片&lt;/h3&gt;&lt;p&gt;先来看一段代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var src=&amp;quot;demo.jpg&amp;quot;;
+
+function set(key){
+    var img=document.createElement(&amp;apos;img&amp;apos;);
+
+    img.addEventListener(&amp;quot;load&amp;quot;,function(){
+        //创建一个canvas
+        var imgCanvas=document.createElement(&amp;quot;canvas&amp;quot;),
+        imgContext=imgCanvas.getContext(&amp;quot;2d&amp;quot;);
+        //确保canvas元素的大小和图片的尺寸一致
+        imgCanvas.width=this.width;
+        imgCanvas.height=this.height;
+        //渲染图片到canvas中,使用canvas的drawImage()方法
+        imgContext.drawImage(this,0,0,this.width,this.height);
+        //用canvas的dataUrl的形式取出图片,imgAsDataURL是一个base64的字符串
+        var imgAsDataURL=imgCanvas.toDataURL(&amp;quot;image/png&amp;quot;);
+        //保存到本地存储中
+        //使用try-catch()查看是否支持localstorage
+        try{
+            localStorage.setItem(key,imgAsDataURL);//将取出的图片存放到localStorage 
+        }
+        catch(e) {
+         console.log(&amp;quot;Storage failed:&amp;quot;+e);//存储失败
+        }
+
+    },false);
+    img.src=src;
+}    
+function get(key) {//从本地缓存获取图片并且渲染
+var srcStr=localStorage.getItem(key);//从localStorage中取出图片
+var imgObj=document.createElement(&amp;apos;img&amp;apos;);//创建一个img标签
+imgObj.src=srcStr;
+document.body.appendChild(imgObj);
+}
+
+    注释：
+    (1)、这个比较适合用在不常更改的图片，但是如果图片的base64大小比较大的话，将比较耗费localStorage的资源；
+
+    (2)、canvas有一个安全策略的问题：如果图片和你本身请求的域名不在同一个域名下，浏览器会报出一个安全问题，这个时候我们要给我们的服务器加一个“允许跨域”访问的响应头————Access Orign=*,这样来保证你的图片可进行跨域被canvas来画；
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;HTML5本地存储需要注意的：&quot;&gt;&lt;a href=&quot;#HTML5本地存储需要注意的：&quot; class=&quot;headerlink&quot; title=&quot;HTML5本地存储需要注意的：&quot;&gt;&lt;/a&gt;HTML5本地存储需要注意的：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用前判断浏览器是否支持localStorage；（IOS浏览器在无痕模式浏览下，是无法打开localStorage；以及，其他奇葩浏览器，在存储localstorage的时候报错）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;做法：根据前面代码，我们在检查是否支持，先进行setItem()一次，然后对setItem进行异常捕获；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;写数据的时候，需要异常处理，避免超出容量抛出错误；&lt;br&gt;localStorage本身只有5M；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;避免把敏感的信息存入localStorage；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;key的唯一性；重复写，将会覆盖之前的key;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HTML5本地存储使用限制：&quot;&gt;&lt;a href=&quot;#HTML5本地存储使用限制：&quot; class=&quot;headerlink&quot; title=&quot;HTML5本地存储使用限制：&quot;&gt;&lt;/a&gt;HTML5本地存储使用限制：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;存储更新策略，过期控制：localStorage是永不过期的，业务上如果想实现一些过期策略，需要在localStorage上加一层处理过期的机制；&lt;/li&gt;
+&lt;li&gt;各个子域名之间不能共享存储数据；（借助H5的postMessage()这个API做一些跨域上得处理）&lt;/li&gt;
+&lt;li&gt;超出存储大小之后如何存储——使用一些如LRU、FIFO的算法去淘汰一些旧的数据；&lt;/li&gt;
+&lt;li&gt;server端如何取到数据——使用post/get参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;处理过期控制&quot;&gt;&lt;a href=&quot;#处理过期控制&quot; class=&quot;headerlink&quot; title=&quot;处理过期控制&quot;&gt;&lt;/a&gt;处理过期控制&lt;/h3&gt;&lt;p&gt;先来看一下代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function set(key,y){
+    var curTime=new Date().getTime();
+    //存储一个当时存储时候的时间
+    localStorage.setItem(key,JSON.stringify({data:v,time:curTime}));
+
+}
+function get(key,exp) {
+    var data=localStorage.getItem(key);
+    var dataObj=JSON.parse(data);
+    if(new Date().getTime()-dataObj.time&amp;gt;exp) {//get出来的时间减去当时存储的时间大于过期时间，那么就认为过期
+       console.log(&amp;quot;过期&amp;quot;);
+    }else {
+    //否则，返回值
+     console.log(&amp;quot;data=&amp;quot;+dataObj.data);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;本地存储使用场景&quot;&gt;&lt;a href=&quot;#本地存储使用场景&quot; class=&quot;headerlink&quot; title=&quot;本地存储使用场景&quot;&gt;&lt;/a&gt;本地存储使用场景&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;本地数据存储，减少网络传输&lt;/li&gt;
+&lt;li&gt;在弱网络的环境下，会发生高延迟，低带宽，应该尽量把数据（如脚本、样式）本地化；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们来看一张图，显示的是本地存储和网络拉取耗时的对比：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/h5_cache/cc03.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;IndexedDB&quot;&gt;&lt;a href=&quot;#IndexedDB&quot; class=&quot;headerlink&quot; title=&quot;IndexedDB&quot;&gt;&lt;/a&gt;IndexedDB&lt;/h2&gt;&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;IndexedDB,是一种能做浏览器中持久地存储结构化数据的数据库，并且为web应用提供了丰富的查询能力；&lt;/p&gt;
+&lt;h3 id=&quot;支持情况&quot;&gt;&lt;a href=&quot;#支持情况&quot; class=&quot;headerlink&quot; title=&quot;支持情况&quot;&gt;&lt;/a&gt;支持情况&lt;/h3&gt;&lt;p&gt;chrome11+\opera不支持\firefox 4+\IE 10+,移动端浏览器支持能力弱&lt;/p&gt;
+&lt;h3 id=&quot;存储结构&quot;&gt;&lt;a href=&quot;#存储结构&quot; class=&quot;headerlink&quot; title=&quot;存储结构&quot;&gt;&lt;/a&gt;存储结构&lt;/h3&gt;&lt;p&gt;IndexedDB是按域名分配独立空间，一个独立域名下可以创建多个数据库，每个数据库可以创建对个对象存储空间（表/table）,一个对象存储空间可以存储多个对象数据；&lt;/p&gt;
+&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/h5_cache/cc04.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用IndexedDB实现离线数据库&quot;&gt;&lt;a href=&quot;#使用IndexedDB实现离线数据库&quot; class=&quot;headerlink&quot; title=&quot;使用IndexedDB实现离线数据库&quot;&gt;&lt;/a&gt;使用IndexedDB实现离线数据库&lt;/h3&gt;&lt;p&gt;这里我们主要从IndexedDB 的四大功能入手：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;增删改&lt;/li&gt;
+&lt;li&gt;事务处理&lt;/li&gt;
+&lt;li&gt;游标&lt;/li&gt;
+&lt;li&gt;索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们通过一段代码来讲解，请关注里面的注释：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+
+&amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;
+    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;姓名：&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;name&amp;quot; value=&amp;quot;&amp;quot; /&amp;gt;    
+    &amp;lt;label for=&amp;quot;phone&amp;quot;&amp;gt;电话：&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;phone&amp;quot; value=&amp;quot;&amp;quot; /&amp;gt;    
+    &amp;lt;label for=&amp;quot;address&amp;quot;&amp;gt;地址:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;address&amp;quot; value=&amp;quot;&amp;quot; /&amp;gt;    
+    &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;seletBtn&amp;quot; value=&amp;quot;查询&amp;quot; /&amp;gt;    
+    &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;add&amp;quot; value=&amp;quot;添加&amp;quot; /&amp;gt;    
+    &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;deleteDB&amp;quot; value=&amp;quot;删除数据库&amp;quot; /&amp;gt;    
+&amp;lt;/div&amp;gt;
+
+
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    var db;
+    var arrayKey=[];
+    var openRequest;
+    var lastCursor;
+    var indexedDB=window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;//indexedDB在不同的浏览器下不同
+
+    var dbName=&amp;quot;person&amp;quot;;//数据库名称
+    var tableName=&amp;quot;testTable&amp;quot;;//表名称
+    function init() {
+        openRequest=indexedDB.open(dbName);//页面加载时先打开一个DB，如果该DB存在，则打开；不存在，则新建
+
+        //触发事件——当一个“新的数据库”被创建或者数据库的“版本号”被更改时触发
+        openRequest.onupgradeneeded=function(e){
+            console.log(&amp;quot;onupgradeneeded&amp;quot;);
+            var thisDb=e.target.result;
+            console.log(thisDb.version);
+
+            //检查这个数据库中是否包含我们要查找的表
+            if(!thisDb.objectStoreNames.contains(tableName)){
+                //不包含——创建一个表
+                console.log(&amp;quot;需要创建一个objectStore&amp;quot;);
+                //keyPath:主键，autoIncrement：主键自增
+                var objectStore=thisDb.createObjectStore(tableName,{keyPath:&amp;quot;id&amp;quot;,autoIncrement:true});
+                //创建表的时候，指定哪些字段是能被索引的
+                objectStore.createIndex(&amp;quot;name&amp;quot;,&amp;quot;name&amp;quot;,{unique:false});//创建索引
+                objectStore.createIndex(&amp;quot;phone&amp;quot;,&amp;quot;phone&amp;quot;,{unique:false});
+            }
+
+        }
+        //触发事件——成功打开一个数据库时触发
+        openRequest.onsuccess=function(e){
+            db=e.target.result;
+            console.log(db.version);
+            db.onerror=function(event){
+                alert(&amp;quot;数据库错误:&amp;quot;+event.target.errorCode);
+                console.dir(event.target);
+            };
+            //判断该数据库中有没有这个表
+            if(db.objectStoreNames.contains(tableName)){
+                //存在这个表
+                console.log(&amp;quot;包含表：&amp;quot;+tableName);
+                //通过事物机制操作一个表的读写，从而保证数据的一致性和可靠性
+                var transaction=db.transaction([tableName],&amp;quot;readwrite&amp;quot;);
+                //事物的事件
+                transaction.oncomplete=function(event){
+                    console.log(&amp;quot;完成&amp;quot;);
+                };
+
+                transaction.onerror=function(event){
+                    console.dir(event);
+                };
+                var objectStore=transaction.objectStore(tableName);//通过事物获取表中一个objectStore对象,即表的对象
+
+                //遍历表的记录——游标-openCursor,这是indexedDb的重点
+                objectStore.openCursor().onsuccess=function(event){
+                    var cursor=event.target.result;
+                    if(cursor){
+                        console.log(cursor.key);
+                        console.dir(cursor.value);
+                        render({key:cursor.key,name:cursor.value[&amp;quot;name&amp;quot;],phone:cursor.value[&amp;quot;phone&amp;quot;],address:cursor.value[&amp;quot;address&amp;quot;]});
+                        lastCursor=cursor.key;//如果不设置lastCursor,那么游标默认是下一条接着下一条来遍历；设置了lastCursor,游标将循环遍历
+                        cursor.continue();
+                    }else {
+                        console.log(&amp;quot;请使用游标来搞定&amp;quot;);
+                    }
+                };
+                objectStore.openCursor().onerror=function(event){
+                    console.dir(event);
+                };
+
+            }
+
+        }
+
+
+        //添加新记录
+        document.querySelector(&amp;quot;#add&amp;quot;).addEventListener(&amp;quot;click&amp;quot;,function(){
+            var name=document.querySelector(&amp;quot;#name&amp;quot;).value();
+            var phone=document.querySelector(&amp;quot;#phone&amp;quot;).value();
+            var address=document.querySelector(&amp;quot;address&amp;quot;).value();
+            var person={&amp;quot;name&amp;quot;:name,&amp;quot;phone&amp;quot;:phone,&amp;quot;address&amp;quot;:address};//设置对象
+            //通过事务——操作表
+            var transaction=db.transaction([tableName],&amp;quot;readwrite&amp;quot;);
+            transaction.oncomplete=function(event){
+                console.log(&amp;quot;事务处理完成&amp;quot;);
+            };
+            transaction.onerror=function(event){
+                console.dir(event);
+            };
+            var objectStore=transaction.objectStore(tableName);//创建一个表对象
+            objectStore.add(person);//添加对象到表中——add()
+            //将新增的记录显示处理
+            objectStore.openCursor().onsuccess=function(event){
+                cursor=event.target.result;
+                var key;
+                if(lastCursor==null){
+                    key=cursor.key;
+                    lastCursor=key;
+                }else {
+                    key=++lastCursor;
+                }
+                render({key:key,name:name,phone:phone,address:address});
+                console.log(&amp;quot;成功添加新记录:&amp;quot;+key);
+                console.dir(person);
+            }
+
+        });
+
+        //删除指定ID
+        function deleteRecord(id){
+            var transaction=db.transaction([tableName],&amp;quot;readwrite&amp;quot;);
+            transaction.oncomplete=function(event){
+                console.log(&amp;quot;事务处理完成&amp;quot;);
+            };
+            transaction.onerror=function(event){
+                console.dir(event);
+            };
+            var objectStore=transaction.objectStore(tableName);
+            var removeKey=parseInt(id);
+            var getRequest=objectStore.get(removeKey);//获取索引值---get()
+            getRequest.onsuccess=function(e){
+                var result=getRequest.result;
+                console.dir(result);
+            }
+            var request=objectStore.delete(removeKey);//删除——delete
+            request.onsuccess=function(e){
+                console.log(&amp;quot;删除成功&amp;quot;);
+            };
+            request.onerror=function(e){
+                console.log(&amp;quot;删除错误&amp;quot;+e);
+            };
+            //隐藏删除的DOM
+            document.getElementById(removeKey).style.display=&amp;quot;none&amp;quot;;
+        }
+
+        //查询记录
+        document.querySelector(&amp;quot;#seletBtn&amp;quot;).addEventListener(&amp;quot;click&amp;quot;,function(){
+            var curName=document.getElementById(&amp;quot;selname&amp;quot;).value；
+            var transaction=db.transaction([tableName],&amp;quot;readwrite&amp;quot;);
+            transaction.oncomplete=function(event){
+                console.log(&amp;quot;事务处理完成&amp;quot;);
+            };
+            transaction.onerror=function(event){
+                console.dir(event);
+            };
+            var objectStore=transaction.objectStore(tableName);
+            var boundKeyRange=IDBKeyRange.only(curName);//生成一个表示范围的Range对象---IDBKeyRange,有4个方法，only\lowerBound\upperBound\bound
+            objectStore.index(&amp;quot;name&amp;quot;).openCursor(boundKeyRange).onsuccess=function(event){
+                //从indexedDb中找到name
+                var cursor=event.target.result;
+                if(!cursor){
+                    return;
+                }
+                var rowData=cursor.value;
+                console.log(rowData);
+                document.getElementById(&amp;apos;content&amp;apos;).innerHTML=&amp;quot;&amp;quot;;
+                render({key:cursor.value.id,name:cursor.value[&amp;quot;name&amp;quot;],phone:cursor.value[&amp;quot;phone&amp;quot;],address:cursor.value[&amp;quot;address&amp;quot;]});
+                cursor.continue();
+            };
+
+        });
+        //删除数据库
+        document.querySelector(&amp;quot;#deleteDB&amp;quot;).addEventListener(&amp;quot;click&amp;quot;,function(){
+            //使用deleteDatabase()
+            var deleteDB=indexedDB.deleteDatabase(dbName);
+            var content=document.querySelector(&amp;quot;#content&amp;quot;);
+            while(content.firstChild){
+                content.removeChild(content.firstChild);
+            }
+            deleteDB.onsuccess=function(event){
+                console.log(&amp;quot;删除成功&amp;quot;);
+            };
+            deleteDB.onerror=function(event){
+                console.dir(event.target);
+            };
+        });
+
+        //渲染
+        function render(opt){
+            var child_node = document.createElement(&amp;quot;div&amp;quot;);
+            var child_node_child1 = document.createElement(&amp;quot;div&amp;quot;);
+            var child_node_child2 = document.createElement(&amp;quot;div&amp;quot;);
+            var child_node_child3 = document.createElement(&amp;quot;div&amp;quot;);
+            var child_node_child4 = document.createElement(&amp;quot;div&amp;quot;);
+            child_node_child1.setAttribute(&amp;quot;class&amp;quot;,&amp;quot;table_child&amp;quot;);
+            child_node_child2.setAttribute(&amp;quot;class&amp;quot;,&amp;quot;table_child&amp;quot;);
+            child_node_child3.setAttribute(&amp;quot;class&amp;quot;,&amp;quot;table_child&amp;quot;);
+            child_node_child4.setAttribute(&amp;quot;class&amp;quot;,&amp;quot;table_child&amp;quot;);
+            child_node_child1.setAttribute(&amp;quot;style&amp;quot;,&amp;quot;float:left&amp;quot;);
+            child_node_child2.setAttribute(&amp;quot;style&amp;quot;,&amp;quot;float:left&amp;quot;);
+            child_node_child3.setAttribute(&amp;quot;style&amp;quot;,&amp;quot;float:left&amp;quot;);
+            child_node_child4.setAttribute(&amp;quot;style&amp;quot;,&amp;quot;float:left&amp;quot;);
+            child_node_child1.innerHTML = name;
+            child_node_child2.innerHTML = opt.phone;
+            child_node_child3.innerHTML = opt.address;
+            child_node_child4.innerHTML = &amp;quot;&amp;lt;input type=&amp;apos;button&amp;apos; value=&amp;apos;删除&amp;apos;&amp;gt;&amp;quot;
+            child_node.appendChild(child_node_child1);
+            child_node.appendChild(child_node_child2);
+            child_node.appendChild(child_node_child3);
+            child_node.appendChild(child_node_child4);
+            child_node.setAttribute(&amp;quot;class&amp;quot;,&amp;quot;table_tr&amp;quot;);
+            child_node.setAttribute(&amp;quot;id&amp;quot;,opt.key);
+            var content = document.getElementById(&amp;apos;content&amp;apos;);
+            content.appendChild(child_node)
+
+        }
+
+    }
+&amp;lt;/script&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;离线缓存——application-Cache&quot;&gt;&lt;a href=&quot;#离线缓存——application-Cache&quot; class=&quot;headerlink&quot; title=&quot;离线缓存——application Cache&quot;&gt;&lt;/a&gt;离线缓存——application Cache&lt;/h2&gt;&lt;h3 id=&quot;何为离线缓存&quot;&gt;&lt;a href=&quot;#何为离线缓存&quot; class=&quot;headerlink&quot; title=&quot;何为离线缓存&quot;&gt;&lt;/a&gt;何为离线缓存&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;它是能让web应用在离线的情况下继续使用，通过一个叫manifest的文件指明需要缓存的资源；你可以通过&lt;code&gt;navigator.online&lt;/code&gt;检测是否在线；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./img/h5_cache/cc05.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;解释：&lt;/p&gt;
+&lt;p&gt;（1）用户通过浏览器（browser）去访问应用，首先检测浏览器是否有一个叫做“App cache”的东西存在，如果存在，则从中检索出app cache所要缓存的list,然后把资源（缓存在浏览器中）拉取出来，返回给用户；&lt;/p&gt;
+&lt;p&gt;（2）在访问的同时，会检查server上一个叫做manifest的文件，如果该文件有更新，就把manifest指定的文件从server端重新拉取一次，然后把这些缓存在浏览器中，并更新相应的app cache文件；如果manifest这个文件没有更新，那么就啥也不做。&lt;/p&gt;
+&lt;p&gt;从上图，我们总结2点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;缓存机制的改变，会更新app cache.但是，用户访问，会返回上一次的结果。这样一来，会有一个麻烦，即如果你的业务发生更改，你就需要去更新一次manifest。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：更改完，第一次是不生效的，只有第二次刷新才会生效；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果有一个文件要更新，你就要去更新manifest,而更新manifest文件，它会把server上的文件全部重新拉取一次，而非只是拉取你需要更改的那个文件，这就会造成损耗；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;浏览器支持情况&quot;&gt;&lt;a href=&quot;#浏览器支持情况&quot; class=&quot;headerlink&quot; title=&quot;浏览器支持情况&quot;&gt;&lt;/a&gt;浏览器支持情况&lt;/h3&gt;&lt;p&gt;safari on ios 3.2+\android 1,5+\window phone 9+&lt;/p&gt;
+&lt;h3 id=&quot;应用&quot;&gt;&lt;a href=&quot;#应用&quot; class=&quot;headerlink&quot; title=&quot;应用&quot;&gt;&lt;/a&gt;应用&lt;/h3&gt;&lt;p&gt;例子：cache.appcache&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CACHE MANIFEST
+
+#version 1.0
+
+CACHE:
+
+#需要缓存的文件
+/css/a.css
+/js/a/js
+/images/a.png
+
+NETWORK:
+
+#每次重新拉取的文件
+
+*
+
+FALLBACK
+
+#离线状况下代替的文件
+
+/404.html
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在页面上引入manifest文件:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;html manifest=&amp;quot;cache.appcache&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在服务器添加&lt;code&gt;mime-type text/cache-manifest&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果在服务器上添加：&lt;/p&gt;
+&lt;p&gt;找到你的xampp/apache/conf目录,找到mime.types文件，在最后面添加一条记录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text/cache-manifest  appcache&lt;/code&gt;   （appcache是后缀名，你可以选择其他的）&lt;/p&gt;
+&lt;p&gt;我们来看一个例子：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;html lang=&amp;quot;en&amp;quot; manifest=&amp;quot;cache.appcache&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meat charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+     &amp;lt;h1&amp;gt;&amp;lt;demo1/h1&amp;gt;
+
+  &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    window.addEventListener(&amp;apos;load&amp;apos;,function(e){
+    //监听app cache的updateready事件
+     window.applicationCache.addEventListener(&amp;apos;updateready&amp;apos;,function(e)){
+
+        console.log(window.applicationCache.status);
+        if(window.applicatioinCache.status==window.applicationCache.UPDATEREADY){
+        //application cache的版本号发生改年
+          window.applicationCache.swapCache();
+          window.location.reload();
+        }else {
+          console.log(&amp;quot;manifest没有更改&amp;quot;);
+        }
+    },false);
+  },false);
+  &amp;lt;/script&amp;gt;
+  &amp;lt;/body&amp;gt;
+
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;app cache会自动地将本页当做一个静态页缓存；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果你要更新，请更新server端的manifest文件的版本；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果你不想启用app cache,或者说现在app cache不适合你现在的应用，那么有一个做法：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更改server端上manifest文件的名称，例如&lt;code&gt;cache1.appcache&lt;/code&gt;,这个时候再去刷新浏览器，首先，浏览器还是会从app cache缓存中读取缓存，到第二次刷新的时候，浏览器会到server端查找manifest文件，发现这个文件不存在，那么浏览器会走网络从Server上重新拉取文件；&lt;/p&gt;
+&lt;h3 id=&quot;app-cache优势：&quot;&gt;&lt;a href=&quot;#app-cache优势：&quot; class=&quot;headerlink&quot; title=&quot;app cache优势：&quot;&gt;&lt;/a&gt;app cache优势：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;完全离线&lt;/li&gt;
+&lt;li&gt;资源缓存，加载更快&lt;/li&gt;
+&lt;li&gt;降低服务器负载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;app-cache缺陷：&quot;&gt;&lt;a href=&quot;#app-cache缺陷：&quot; class=&quot;headerlink&quot; title=&quot;app cache缺陷：&quot;&gt;&lt;/a&gt;app cache缺陷：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;含有manifest属性的当前请求页无论如何都会被缓存；&lt;/li&gt;
+&lt;li&gt;更新需要建立在manifest文件的更新，文件更新后是需要页面再次刷新的，并且在第2次刷新才能获取新资源；&lt;/li&gt;
+&lt;li&gt;更新是全局性的，无法单独更新某个文件；&lt;/li&gt;
+&lt;li&gt;对于链接的参数变化的敏感的，任何一个参数的修改都会被重新缓存，例如：index.html和index.html?v=1会被认为是不同文件，分别缓存；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;app-cache适用场景&quot;&gt;&lt;a href=&quot;#app-cache适用场景&quot; class=&quot;headerlink&quot; title=&quot;app cache适用场景&quot;&gt;&lt;/a&gt;app cache适用场景&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;单地址页面&lt;/li&gt;
+&lt;li&gt;对实时性要求不要的业务&lt;/li&gt;
+&lt;li&gt;离线web应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;在实际应用中，我们需要根据业务的需要来采取相应的缓存措施，如上所述，html5的几种缓存都有各自的优缺点和适用场景，有时我们也需要组合使用。&lt;/p&gt;
+&lt;p&gt;关于HTML5缓存我们就介绍到这里。&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://rainsilence.iteye.com/blog/984569&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HTML5之IndexedDB使用详解&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;关于存储&quot;&gt;&lt;a href=&quot;#关于存储&quot; class=&quot;headerlink&quot; title=&quot;关于存储&quot;&gt;&lt;/a&gt;关于存储&lt;/h2&gt;&lt;p&gt;说道存储，你可能会想到这是服务器端的一种设置。&lt;/p&gt;
+&lt;p&gt;服务器端的存储介质大体上分为4种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="性能优化" scheme="http://lvtraveler.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="HTML5" scheme="http://lvtraveler.github.io/tags/HTML5/"/>
+    
+      <category term="缓存" scheme="http://lvtraveler.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="性能" scheme="http://lvtraveler.github.io/tags/%E6%80%A7%E8%83%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>fis-plus【01】——前端开发环境配置</title>

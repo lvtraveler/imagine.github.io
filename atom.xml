@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvtraveler.github.io/"/>
-  <updated>2016-04-03T13:25:04.000Z</updated>
+  <updated>2016-04-09T08:34:23.000Z</updated>
   <id>http://lvtraveler.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《分成两半的子爵》</title>
+    <link href="http://lvtraveler.github.io/2016/04/09/%E5%88%86%E6%88%90%E4%B8%A4%E5%8D%8A%E7%9A%84%E5%AD%90%E7%88%B5/"/>
+    <id>http://lvtraveler.github.io/2016/04/09/分成两半的子爵/</id>
+    <published>2016-04-09T08:31:55.000Z</published>
+    <updated>2016-04-09T08:34:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;卡尔维诺经典，《分成两半的子爵》一书中有这么两段话让我印象深刻：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“如果能够将一切东西都一劈为二的话，那么人人都可以摆脱他那愚蠢的完整概念的束缚了。我原来是完整的人。那时什么东西在我看来都是自然而混乱的，像空气一样简单。我以为什么都已看清，其实只看到皮毛而已。假如你将变成你自己的一半的话，孩子，我祝愿你如此，你便会了解用整个头脑的普通智力所不能了解的东西。你虽然失去了你自己和世界的一半，但是留下的这一半将是千倍的深刻和珍贵。你也将会愿意一切东西都如你所想象的那样变成半个，因为美好、智慧、正义只存在于被破坏之后。”    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“这就是做半个人的好处：理解世界上每个人由于自我不完整而感到的痛苦，理解每一事物由于自身不完全而形成的缺陷。我过去时完整的，那时我还不明白这些道理，我走在遍地的痛苦和伤痕之中却视而不见、充耳不闻，一个完整的人不敢相信这样的事实。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; 《分成两半的子爵》讲述的人物不仅仅是在战场上被土耳其人用炮火炸成两半的子爵，还有造绞刑架的工匠，子爵的奶妈，英格兰大夫，他们在这场故事中的表现如现实中存在的人物一样，讲述的是一场关于道德价值的故事。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;卡尔维诺经典，《分成两半的子爵》一书中有这么两段话让我印象深刻：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“如果能够将一切东西都一劈为二的话，那么人人都可以摆脱他那愚蠢的完整概念的束缚了。我原来是完整的人。那时什么东西在我看来都是自然而混乱的，像空气一样简单。我以为什么都已
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://lvtraveler.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://lvtraveler.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="卡尔维诺经典" scheme="http://lvtraveler.github.io/tags/%E5%8D%A1%E5%B0%94%E7%BB%B4%E8%AF%BA%E7%BB%8F%E5%85%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5缓存的那些事</title>

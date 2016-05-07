@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="实例,angular,教程," />
 
 
 
@@ -59,22 +59,73 @@
 
 
 
-<meta name="description" content="从今天起，慢慢将blog从CSDN、豆瓣迁移到这里，在CSDN、豆瓣上的blog会陆续更新这里的blog,以后就在这里静心记录我的生活、工作、学习。
-还是那句话，脚踏实地，技术很纯粹，生活很简单。我们一起加油！
-welcome to imagine-life, nice to meet you.">
+<meta name="description" content="##初探四大特性
+###angular四大核心特性：
+
+MVC
+
+模块化
+
+指令系统（ng特有）
+
+双向数据绑定(ng特有)
+
+
+###MVC
+首先，来了解ng的第一个特性：MVC
+Model:数据模型层；
+View :视图层，负责展示，我们眼睛能看到的那些东西都属于视图；
+Controller:业务逻辑和控制逻辑放的地方；
+MVC的好处：
+职责清晰，代码模块化，便于复用，例如像Model、Vie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="start 2016.03.19">
-<meta property="og:url" content="http://lvtraveler.github.io/2016/03/19/start/index.html">
+<meta property="og:title" content="《AngularJS实例-01》">
+<meta property="og:url" content="http://lvtraveler.github.io/2016/05/05/angular-大漠秋穷01/index.html">
 <meta property="og:site_name" content="Imagine">
-<meta property="og:description" content="从今天起，慢慢将blog从CSDN、豆瓣迁移到这里，在CSDN、豆瓣上的blog会陆续更新这里的blog,以后就在这里静心记录我的生活、工作、学习。
-还是那句话，脚踏实地，技术很纯粹，生活很简单。我们一起加油！
-welcome to imagine-life, nice to meet you.">
-<meta property="og:updated_time" content="2016-03-20T10:16:27.000Z">
+<meta property="og:description" content="##初探四大特性
+###angular四大核心特性：
+
+MVC
+
+模块化
+
+指令系统（ng特有）
+
+双向数据绑定(ng特有)
+
+
+###MVC
+首先，来了解ng的第一个特性：MVC
+Model:数据模型层；
+View :视图层，负责展示，我们眼睛能看到的那些东西都属于视图；
+Controller:业务逻辑和控制逻辑放的地方；
+MVC的好处：
+职责清晰，代码模块化，便于复用，例如像Model、Vie">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/ng/ng01.png">
+<meta property="og:image" content="http://lvtraveler.github.io/./img/ng/ng02.png">
+<meta property="og:updated_time" content="2016-05-07T12:43:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="start 2016.03.19">
-<meta name="twitter:description" content="从今天起，慢慢将blog从CSDN、豆瓣迁移到这里，在CSDN、豆瓣上的blog会陆续更新这里的blog,以后就在这里静心记录我的生活、工作、学习。
-还是那句话，脚踏实地，技术很纯粹，生活很简单。我们一起加油！
-welcome to imagine-life, nice to meet you.">
+<meta name="twitter:title" content="《AngularJS实例-01》">
+<meta name="twitter:description" content="##初探四大特性
+###angular四大核心特性：
+
+MVC
+
+模块化
+
+指令系统（ng特有）
+
+双向数据绑定(ng特有)
+
+
+###MVC
+首先，来了解ng的第一个特性：MVC
+Model:数据模型层；
+View :视图层，负责展示，我们眼睛能看到的那些东西都属于视图；
+Controller:业务逻辑和控制逻辑放的地方；
+MVC的好处：
+职责清晰，代码模块化，便于复用，例如像Model、Vie">
+<meta name="twitter:image" content="http://lvtraveler.github.io/./img/ng/ng01.png">
 
 
 
@@ -92,7 +143,7 @@ welcome to imagine-life, nice to meet you.">
   };
 </script>
 
-  <title> start 2016.03.19 | Imagine </title>
+  <title> 《AngularJS实例-01》 | Imagine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +323,7 @@ welcome to imagine-life, nice to meet you.">
             
             
               
-                start 2016.03.19
+                《AngularJS实例-01》
               
             
           </h1>
@@ -284,8 +335,8 @@ welcome to imagine-life, nice to meet you.">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T21:01:47+08:00" content="2016-03-19">
-              2016-03-19
+            <time itemprop="dateCreated" datetime="2016-05-05T22:10:46+08:00" content="2016-05-05">
+              2016-05-05
             </time>
           </span>
 
@@ -298,8 +349,8 @@ welcome to imagine-life, nice to meet you.">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -314,8 +365,8 @@ welcome to imagine-life, nice to meet you.">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/19/start/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/start/" itemprop="commentsCount"></span>
+                <a href="/2016/05/05/angular-大漠秋穷01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/05/angular-大漠秋穷01/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,9 +388,83 @@ welcome to imagine-life, nice to meet you.">
       
 
       
-        <p>从今天起，慢慢将blog从CSDN、豆瓣迁移到这里，在CSDN、豆瓣上的blog会陆续更新这里的blog,以后就在这里静心记录我的生活、工作、学习。</p>
-<p>还是那句话，脚踏实地，技术很纯粹，生活很简单。我们一起加油！</p>
-<p>welcome to imagine-life, nice to meet you.</p>
+        <p>##初探四大特性</p>
+<p>###angular四大核心特性：</p>
+<ul>
+<li><p>MVC</p>
+</li>
+<li><p>模块化</p>
+</li>
+<li><p>指令系统（ng特有）</p>
+</li>
+<li><p>双向数据绑定(ng特有)</p>
+</li>
+</ul>
+<p>###MVC</p>
+<p>首先，来了解ng的第一个特性：MVC</p>
+<p>Model:数据模型层；</p>
+<p>View :视图层，负责展示，我们眼睛能看到的那些东西都属于视图；</p>
+<p>Controller:业务逻辑和控制逻辑放的地方；</p>
+<p>MVC的好处：</p>
+<p>职责清晰，代码模块化，便于复用，例如像Model、View这种东西，能够经常的复用，因为很多地方的界面展示是一模一样的；</p>
+<p>MVC属于架构模式，它是观察者模式、策略模式、组合模式的组合；</p>
+<p>在ng的语境下，你要很熟悉代码中哪些是Model，哪些是View，哪些是Controller；</p>
+<p>例如：有这么一段代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;!--Controller: 给div放置一个控制器testController --&gt;</span><br><span class="line">	&lt;div ng-controller=&quot;testController&quot;&gt;</span><br><span class="line">		&lt;!-- Model、View:数据模型&#123;&#123;&#125;&#125;、View:&lt;p&gt;标签 --&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123;greeting.text&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		function testController($scope) &#123;//控制器,负责业务逻辑与控制逻辑</span><br><span class="line">			$scope.greeting=&#123;</span><br><span class="line">				text:&apos;Hello ng&apos;</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>###模块化</p>
+<p>上面的代码中我们看到，我们定义了一个全局的函数testController,这显然不好。现在我们对这个function进行改进：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app=&quot;test_ng&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;!--Controller: 给div放置一个控制器testController --&gt;</span><br><span class="line">	&lt;div ng-controller=&quot;testController&quot;&gt;</span><br><span class="line">		&lt;!-- Model、View:数据模型&#123;&#123;&#125;&#125;、View:&lt;p&gt;标签 --&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123;greeting.text&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var myModule=angular.module(&quot;test_ng&quot;,[]);//定义一个模块</span><br><span class="line">		//用模块生成一个控制器testController</span><br><span class="line">		myModule.controller(&quot;testController&quot;,[&apos;$scope&apos;,</span><br><span class="line">			function testng($scope)&#123;//第一个参数$scope,在告诉ng,请再testng里注入$scope————即，依赖注入</span><br><span class="line">			$scope.greeting=&#123;</span><br><span class="line">				text:&apos;Hello ng&apos;</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">		]);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>下面我们具体看一下ng的模块化Module概念，并且在Module下有很多的概念。</p>
+<blockquote>
+<p>需要注意的是：angular是从模块开始的，你在做东西的时候，需要首先想到Module,只有在Module下你才能使用ng的一些概念；</p>
+</blockquote>
+<p>我们来看一张图：</p>
+<p><img src="./img/ng/ng01.png" alt="alt text" title="Title"></p>
+<p>###指令系统</p>
+<p>指令系统，是angular最吸引人的部分。</p>
+<p>首先上代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app=&quot;MyNg&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;!-- 浏览器不是识别hello标签 --&gt;</span><br><span class="line">	&lt;hello&gt;&lt;/hello&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var myModule=angular.module(&quot;MyNg&quot;,[]);//定义一个模块</span><br><span class="line">		// 为了让浏览器解析hello这个自定义标签，我们需要借助ng的directive特性</span><br><span class="line">		myModule.directive(&quot;hello&quot;,function()&#123;//hello 对应指令名称，即&lt;hello&gt;&lt;/hello&gt;标签名</span><br><span class="line">			return &#123;</span><br><span class="line">				restrict:&apos;E&apos;,</span><br><span class="line">				template:&apos;&lt;div&gt;Hello angular&lt;/div&gt;&apos;,//hello标签被替换为该模板</span><br><span class="line">				replace:true</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>这就是angular的指令系统，有了这个指令系统我们能够做很多事情，比如我们将一个具体的指令进行封装，在其他地方我们就能够进行调用。</p>
+<p>当然，指令不仅仅是用来使用自定义标签，它还有其他神奇的功能，例如：</p>
+<p>ng-app:这是一个ng指令，ng-app=”MyNg”,表示告诉angular去使用MyNg这个模块。ng-app这个指令可以看成是一个angular的启动指令，或是入口，相当于C语言中得Main（）函数。故，在任意一个单页中只能出现一次ng-app。</p>
+<p>###双向数据绑定</p>
+<blockquote>
+<p>在单向数据绑定中，通常是把模板和数据模型都写好，这个数据模型可能来自后端数据，然后将模板与数据模型合并输出到视图进行展示，这样有一个缺点：即一旦模板与数据模型写好之后，View就无法改变了，如果要改变，那么只能重新再来一次。</p>
+</blockquote>
+<p>在JqueryUi\Backbone\Flex这样的前端框架中都是这么处理的，这样是否优雅呢？</p>
+<p>Angular看到了，就不喜欢了，它就弄了一个双向数据绑定，它认为：</p>
+<ul>
+<li>视图View和数据Model是对应的，当View上面的内容发生变化的时候，Model也发生变化；当Model发生变化，View会自动更新；——这样的思路需要借助一种事件机制；</li>
+</ul>
+<p>例如：在HTML中，表单常常会发生变化，因为表单是用来搜集用户的输入，故常常容易发生变化。在angular中，如果数据/表单发生变化，就会同步到Model上面；</p>
+<p>下面看代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">	&lt;form&gt;</span><br><span class="line">		&lt;!-- 在input中绑定一个ng-model --&gt;</span><br><span class="line">		&lt;input type=&quot;text&quot; placeholder=&quot;请输入&quot; ng-model=&quot;greeting.text&quot;&gt;</span><br><span class="line">		&lt;!-- 在p标签中去获取值，双花括弧在angular中表示取值 --&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123;greeting.text&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>在上面这段代码中，你无需写任务angular代码就能实现一个简单的双向数据绑定。</p>
+<p>###思考</p>
+<ul>
+<li>为什么其他的前端框架不实现双向数据绑定？</li>
+<li>双向数据绑定有什么缺点？</li>
+</ul>
+<p>##搭建开发、调式、测试工具</p>
+<p>前端开发中需要什么样的开发环境？</p>
+<ul>
+<li>代码编辑工具：sublime编辑器</li>
+<li>断点调式工具：chrome 插件Batarang</li>
+<li>版本管理工具: git,在从github上克隆项目前需要先fork(相当于建立一个自己的分支)，然后再Clone.</li>
+<li>代码合并和混淆工具:gulp、grunt</li>
+<li>依赖管理工具:bower(自动安装依赖组件、组件之间的依赖检测、版本兼容性自动检测)</li>
+<li>轻量级Server—http-server(一款简单的http-server,能将电脑上得任意一个目录变成在浏览器上能访问的；它基于NodeJS的HTTP接口，通过npm 安装，主要用来模拟与后端交互的数据)</li>
+<li><p>单元测试工具：karma配合jasmine（通过npm安装）。jasmine有四个核心概念：分组、用例、期望、匹配，分别对应jasmine四种函数。</p>
+<p>  （1）describe(string,function)分组，一组测试用例；</p>
+<p>  （2）it(string,function)表示测试用例</p>
+<p>  （3）expect(expression)表示期望expression这个表达式具有某个值或者具有某种行为；</p>
+<p>  （4）to<em>*</em>(arg)表示匹配；</p>
+</li>
+<li><p>集成测试工具：Proctactor-专门为Angular应用而设计；<br>Proctactor基于webDriverJs;<br>利用webDriverJS,能借助于NodeJS直接调用浏览器的接口；<br><a href="https://github.com/angular/protractor" target="_blank" rel="external">https://github.com/angular/protractor</a><br><a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank" rel="external">https://code.google.com/p/selenium/wiki/WebDriverJs</a><br>angular官方提供angular-phonecat的例子做为测试；</p>
+</li>
+</ul>
+<p>最后我们来看一个完整的项目目录结构实例：</p>
+<p><img src="./img/ng/ng02.png" alt="alt text" title="Title"></p>
 
       
     </div>
@@ -354,7 +479,11 @@ welcome to imagine-life, nice to meet you.">
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag">#随笔</a>
+            <a href="/tags/实例/" rel="tag">#实例</a>
+          
+            <a href="/tags/angular/" rel="tag">#angular</a>
+          
+            <a href="/tags/教程/" rel="tag">#教程</a>
           
         </div>
       
@@ -363,12 +492,16 @@ welcome to imagine-life, nice to meet you.">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/24/楚亡/" rel="next" title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
+                <i class="fa fa-chevron-left"></i> 《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/20/【01】前端开发环境配置/" rel="prev" title="fis-plus【01】——前端开发环境配置">
-                fis-plus【01】——前端开发环境配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/07/js闭包之块级作用域/" rel="prev" title="《js闭包之块级作用域》">
+                《js闭包之块级作用域》 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -384,10 +517,10 @@ welcome to imagine-life, nice to meet you.">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/19/start/"
-     data-title="start 2016.03.19"
+        <div class="ds-share flat" data-thread-key="2016/05/05/angular-大漠秋穷01/"
+     data-title="《AngularJS实例-01》"
      data-content=""
-     data-url="http://lvtraveler.github.io/2016/03/19/start/">
+     data-url="http://lvtraveler.github.io/2016/05/05/angular-大漠秋穷01/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -414,8 +547,8 @@ welcome to imagine-life, nice to meet you.">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/19/start/"
-           data-title="start 2016.03.19" data-url="http://lvtraveler.github.io/2016/03/19/start/">
+      <div class="ds-thread" data-thread-key="2016/05/05/angular-大漠秋穷01/"
+           data-title="《AngularJS实例-01》" data-url="http://lvtraveler.github.io/2016/05/05/angular-大漠秋穷01/">
       </div>
     
   </div>

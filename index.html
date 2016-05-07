@@ -484,7 +484,7 @@
 <p>需要注意的是：angular是从模块开始的，你在做东西的时候，需要首先想到Module,只有在Module下你才能使用ng的一些概念；</p>
 </blockquote>
 <p>我们来看一张图：</p>
-<p><img src="../../img/ng/ng01.png" alt="alt text" title="Title"></p>
+<p><img src="./img/ng/ng01.png" alt="alt text"></p>
 <h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><p>指令系统，是angular最吸引人的部分。</p>
 <p>首先上代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app=&quot;MyNg&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;!-- 浏览器不是识别hello标签 --&gt;</span><br><span class="line">	&lt;hello&gt;&lt;/hello&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var myModule=angular.module(&quot;MyNg&quot;,[]);//定义一个模块</span><br><span class="line">		// 为了让浏览器解析hello这个自定义标签，我们需要借助ng的directive特性</span><br><span class="line">		myModule.directive(&quot;hello&quot;,function()&#123;//hello 对应指令名称，即&lt;hello&gt;&lt;/hello&gt;标签名</span><br><span class="line">			return &#123;</span><br><span class="line">				restrict:&apos;E&apos;,</span><br><span class="line">				template:&apos;&lt;div&gt;Hello angular&lt;/div&gt;&apos;,//hello标签被替换为该模板</span><br><span class="line">				replace:true</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
@@ -525,7 +525,7 @@
 </li>
 </ul>
 <p>最后我们来看一个完整的项目目录结构实例：</p>
-<p><img src="../../img/ng/ng02.png" alt="alt text" title="Title"></p>
+<p><img src="./img/ng/ng02.png" alt="alt text"></p>
 
           
         

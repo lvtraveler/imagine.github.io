@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="阅读,历史/文学," />
+  <meta name="keywords" content="概念,javascript," />
 
 
 
@@ -59,22 +59,28 @@
 
 
 
-<meta name="description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
-
-OK，">
+<meta name="description" content="在js中我们应该尽量避免使用全局变量和全局函数，以防止发生命名冲突，那么要如何避免呢？js中有一个闭包的概念，现在我们使用闭包中块级作用域来讲解，这也是闭包中最重要的概念。
+js本身是不支持像C/C#/java…这样的语言中有块级作用域的，即在语法块中定义的变量，在语法块外面是无法访问到的。
+那么，js要怎么去模拟像C这样的块级作用域呢？我们先来看一个栗子：
+例如：
+123456789 test(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
-<meta property="og:url" content="http://lvtraveler.github.io/2016/04/24/楚亡/index.html">
+<meta property="og:title" content="《js闭包之块级作用域》">
+<meta property="og:url" content="http://lvtraveler.github.io/2016/05/07/js闭包之块级作用域/index.html">
 <meta property="og:site_name" content="Imagine">
-<meta property="og:description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
-
-OK，">
-<meta property="og:updated_time" content="2016-04-24T16:02:40.000Z">
+<meta property="og:description" content="在js中我们应该尽量避免使用全局变量和全局函数，以防止发生命名冲突，那么要如何避免呢？js中有一个闭包的概念，现在我们使用闭包中块级作用域来讲解，这也是闭包中最重要的概念。
+js本身是不支持像C/C#/java…这样的语言中有块级作用域的，即在语法块中定义的变量，在语法块外面是无法访问到的。
+那么，js要怎么去模拟像C这样的块级作用域呢？我们先来看一个栗子：
+例如：
+123456789 test(">
+<meta property="og:updated_time" content="2016-05-07T01:19:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
-<meta name="twitter:description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
-
-OK，">
+<meta name="twitter:title" content="《js闭包之块级作用域》">
+<meta name="twitter:description" content="在js中我们应该尽量避免使用全局变量和全局函数，以防止发生命名冲突，那么要如何避免呢？js中有一个闭包的概念，现在我们使用闭包中块级作用域来讲解，这也是闭包中最重要的概念。
+js本身是不支持像C/C#/java…这样的语言中有块级作用域的，即在语法块中定义的变量，在语法块外面是无法访问到的。
+那么，js要怎么去模拟像C这样的块级作用域呢？我们先来看一个栗子：
+例如：
+123456789 test(">
 
 
 
@@ -92,7 +98,7 @@ OK，">
   };
 </script>
 
-  <title> 《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败 | Imagine </title>
+  <title> 《js闭包之块级作用域》 | Imagine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +278,7 @@ OK，">
             
             
               
-                《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败
+                《js闭包之块级作用域》
               
             
           </h1>
@@ -284,8 +290,8 @@ OK，">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T23:22:15+08:00" content="2016-04-24">
-              2016-04-24
+            <time itemprop="dateCreated" datetime="2016-05-07T09:19:19+08:00" content="2016-05-07">
+              2016-05-07
             </time>
           </span>
 
@@ -298,8 +304,8 @@ OK，">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -314,8 +320,8 @@ OK，">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/24/楚亡/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/楚亡/" itemprop="commentsCount"></span>
+                <a href="/2016/05/07/js闭包之块级作用域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/07/js闭包之块级作用域/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,43 +343,12 @@ OK，">
       
 
       
-        <p>最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。</p>
-<blockquote>
-<p>OK，既然说要“重新梳理楚汉之争”，那么我们就来聊聊楚汉之争。</p>
-</blockquote>
-<p>首先，想问问楚汉争霸中都有哪些主要人物？（不得不赞叹，历史是为天下豪杰写的）项羽、刘邦肯定的了，然后你从这本书名还可以找到韩信这个人，还有呢？————————我们从项羽的楚军和刘邦的汉军来找找这些人。我们根据这几个主要人物来讲楚汉之争。</p>
-<p>从两位头头开始吧。</p>
-<p>项羽。这个人很厉害，西楚霸王，在项羽败亡之前吟唱的《垓(gai)下歌》中，他都这么自夸自己：‘力拔山兮气盖世,时不利兮骓（zhui,’马’）不逝.骓不逝兮可奈何,虞兮虞兮奈若何！’在开头第一句，他就说了’力拔山兮气盖世’，意思是“老子是盖世英雄，力大无穷能开山”，但是项羽的厉害不止是力气大。——————谁能说说项羽还有哪里厉害的地方呢？取了一位美貌天仙的虞姬？还是他在乌江自刎时那句豪言壮语？</p>
-<p>————————项羽是位军人，身上满满军人的血气，自幼跟着叔父项梁打战，在对秦战争中从未有过败仗，多次以少胜多，全歼秦军，在大规模野战中更是得心应手，有如神助。例如：在一次单刀中，项羽骑着坐骑乌骓，对方将领看到项羽瞪了自己一眼，立马吓得魂不守舍，回到阵营不敢出战。在几个著名的战役——如“巨鹿之战大破秦军，项羽破斧沉舟以5万楚军大胜40万秦军，从此确立项羽在反秦联盟中得地位；彭城之战大败刘邦，使刘邦从此不敢与项羽正面交锋”，可以看得出项羽在大战的时候是很有自信的。</p>
-<p>但是，唯有这一次——垓下之战，让项羽犹如困在牢笼中感到很不舒服，项羽对部下直言：“这是上天要亡我，而非征战之过错啊！”。项羽很是无奈啊~对了，我们前面说到过项羽在临死前说了一句豪言壮语，这句话也能体现出他的勇气。项羽站在乌江边，对着迎面而来的吕马童喊道：“我听说汉王赏金千金，封邑(yi)万户,要我的头，我成全你！”说完挥剑自刎，年仅31岁。其实，在乌江边上，早有船家在等候项羽过江，但是项羽拒绝了，他说道：“既然天要亡我，又何必渡江！遥想当年八千江东子弟随我渡江西进，如今无一人生还，纵使江东父老兄弟怜爱不弃，仍以我为王，我又有何脸面去见他们？纵使江东父老兄弟默默不言语，我项籍岂能问心无愧啊！”。</p>
-<blockquote>
-<p>哈哈~英雄，往往因为几句气壮山河的话语让世人铭记。。。</p>
-</blockquote>
-<p>前面我们说了项羽的厉害之处，有人会问，项羽这么屌，最终为什么会败呢？</p>
-<p>我们来说说项羽失败的几处不完全原因：</p>
-<p>在荥（xing）阳之战中，两军对峙，项羽一心想引诱刘邦出城会战，刘邦可不干，但是这么一直对峙下去也不是办法，就对项羽喊话：“我刘季宁愿斗志，不能斗力。”，接着高声宣读项羽的十大罪状，我列举主要几条：</p>
-<ul>
-<li>第一条：项羽违背与刘邦定下的约定：“先入关中者作关中王”；</li>
-<li>第二条：违背与楚怀王“进入秦国不得暴掠”的约定，项羽进入关中后，烧毁了秦国的宫殿，破坏秦始皇墓地上的建筑，搜刮财宝据为己有；</li>
-<li>第三条：暴虐欺诈，在新安坑杀20万秦军将士；</li>
-<li>第四条：驱逐义帝楚怀王，并派人秘密杀害义帝于江南；</li>
-</ul>
-<p>从上面几条来看，我们能看到项羽的性格缺失：不守信、不敬上、大逆无道、功高自傲；</p>
-<p>史太公司马迁在项羽败亡的百年之后，曾总结过项羽失败的原因：</p>
-<ul>
-<li>战略地理错误：背弃关中，定都彭城；</li>
-<li>政治伦理错误：驱逐楚怀王，以下克上；</li>
-<li>居功自傲：固执己见，不向历史学习；</li>
-<li>以武力经营天下；</li>
-</ul>
-<p>几千年以来，历史学家们都对项羽的失败做出了不同的评价，可是于己所见，综上项羽所做过的事，可以见得项羽在楚汉之争中渐渐失去了人心，在垓下之战后诸侯国纷纷离他而去，项羽最终失去了帮手，孤军奋战。可见“失人心者失天下”、“水能载舟，亦能覆舟”。</p>
-<p>当然，从用人这个角度看，也是项羽失败的原因之一：</p>
-<p>项羽身边的文武官，大都是由项羽的家族人士来担当，例如项梁、项伯、项庄，亚父范增，发小龙且等寥寥数人；</p>
-<p>《史记》中记载陈平的一句话，陈平向刘邦献计说：“项王的忠臣，只有范增、钟离眛、龙且、周殷几个人，如果你能用万金买通说客，去离间他们的君臣关系，再出兵攻打，项王必败。”刘邦遂用此计。项羽果然对忠臣疑忌，致使范增、钟离眛、周殷等忠臣纷纷离去，几乎只有龙且没有离开。”</p>
-<p>由此可见，人才计划在一个国家或是企业尤为重要！</p>
-<blockquote>
-<p>那么，刘邦为什么能胜？这个我们放到下期来讲~ 回见！</p>
-</blockquote>
+        <p>在js中我们应该尽量避免使用全局变量和全局函数，以防止发生命名冲突，那么要如何避免呢？js中有一个闭包的概念，现在我们使用闭包中块级作用域来讲解，这也是闭包中最重要的概念。</p>
+<p>js本身是不支持像C/C#/java…这样的语言中有块级作用域的，<strong>即在语法块中定义的变量，在语法块外面是无法访问到的。</strong></p>
+<p>那么，js要怎么去模拟像C这样的块级作用域呢？我们先来看一个栗子：</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> test();</span><br><span class="line"> function test() &#123;</span><br><span class="line">	(function()&#123;</span><br><span class="line">		for(var i=0;i&lt;3;i++)&#123;</span><br><span class="line">			console.log(i);//这个时候i就在**匿名函数里**面有效了，在**匿名函数外**无效，在匿名函数外，i就被销毁了</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)();	</span><br><span class="line">	console.log(i);//输出:undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在函数内部创建一个匿名函数，就相当于在函数内部创建了一个私有作用域，这对于在较大/多人开发的项目中是很好用的，这样每个程序员能在自己的功能函数中使用自己的变量不至于混乱、冲突。</p>
 
       
     </div>
@@ -388,9 +363,9 @@ OK，">
       
         <div class="post-tags">
           
-            <a href="/tags/阅读/" rel="tag">#阅读</a>
+            <a href="/tags/概念/" rel="tag">#概念</a>
           
-            <a href="/tags/历史-文学/" rel="tag">#历史/文学</a>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
         </div>
       
@@ -399,17 +374,13 @@ OK，">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/分成两半的子爵/" rel="next" title="《分成两半的子爵》">
-                <i class="fa fa-chevron-left"></i> 《分成两半的子爵》
+              <a href="/2016/04/24/楚亡/" rel="next" title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
+                <i class="fa fa-chevron-left"></i> 《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/07/js闭包之块级作用域/" rel="prev" title="《js闭包之块级作用域》">
-                《js闭包之块级作用域》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -424,10 +395,10 @@ OK，">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/24/楚亡/"
-     data-title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败"
+        <div class="ds-share flat" data-thread-key="2016/05/07/js闭包之块级作用域/"
+     data-title="《js闭包之块级作用域》"
      data-content=""
-     data-url="http://lvtraveler.github.io/2016/04/24/楚亡/">
+     data-url="http://lvtraveler.github.io/2016/05/07/js闭包之块级作用域/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -454,8 +425,8 @@ OK，">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/24/楚亡/"
-           data-title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败" data-url="http://lvtraveler.github.io/2016/04/24/楚亡/">
+      <div class="ds-thread" data-thread-key="2016/05/07/js闭包之块级作用域/"
+           data-title="《js闭包之块级作用域》" data-url="http://lvtraveler.github.io/2016/05/07/js闭包之块级作用域/">
       </div>
     
   </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvtraveler.github.io/"/>
-  <updated>2016-05-07T01:19:19.000Z</updated>
+  <updated>2016-05-22T02:45:01.000Z</updated>
   <id>http://lvtraveler.github.io/</id>
   
   <author>
@@ -14,6 +14,140 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《MongoDB常用命令&amp;基本操作》</title>
+    <link href="http://lvtraveler.github.io/2016/05/22/%E3%80%90MongoDB%E3%80%91MongoDB%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://lvtraveler.github.io/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/</id>
+    <published>2016-05-22T02:42:33.000Z</published>
+    <updated>2016-05-22T02:45:01.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;MongoDB安装&quot;&gt;&lt;a href=&quot;#MongoDB安装&quot; class=&quot;headerlink&quot; title=&quot;MongoDB安装&quot;&gt;&lt;/a&gt;MongoDB安装&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1、下载安装（&lt;a href=&quot;http://www.mongodb.org/downloads），安装目录：c:\MongoDB&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.mongodb.org/downloads），安装目录：c:\MongoDB&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2、在c:\MongoDB下新建data\db目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3、命令行运行服务端程序mongod.exe：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C:&gt;cd C:\MongoDB\bin&lt;br&gt;C:\MongoDB\bin&amp;gt;mongod.exe –dbpath=C:\MongoDB\data\db –directoryperdb  –logpath=C:\MongoDB\data\logs –logappend&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4、新建命令行，运行客户端程序mongo.exe (不要关闭mongod.exe这个命令行窗口)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;MongoDB概念&quot;&gt;&lt;a href=&quot;#MongoDB概念&quot; class=&quot;headerlink&quot; title=&quot;MongoDB概念&quot;&gt;&lt;/a&gt;MongoDB概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;databases: 数据库;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;collections:表；（colloections组成了databases）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;documents:行；（documents组成了collections）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MongoDB没有新建数据库的命令，只要进行insert或其它操作，MongoDB就会自动帮你建立数据库和collection。当查询一个不存在的collection时也不会出错，Mongo会认为那是一个空的collection。&lt;/p&gt;
+&lt;p&gt;一个对象被插入到数据库中时，如果它没有ID，会自动生成一个“_id”字段，为12字节(24位)16进制数。&lt;br&gt;当然如果插入文档不带_id,则系统会帮你自动创建一个，如果自己指定了就用自己指定的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h3&gt;&lt;p&gt;字段名限制：不能以“$”开头；不能包含“.”；“_id”是系统保留的字段，但用户可以自己储存唯一性的数据在字段中。&lt;/p&gt;
+&lt;h3 id=&quot;客户端语法：&quot;&gt;&lt;a href=&quot;#客户端语法：&quot; class=&quot;headerlink&quot; title=&quot;客户端语法：&quot;&gt;&lt;/a&gt;客户端语法：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;show dbs  // 列出所有数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;use memo  // 使用数据库memo。即使这个数据库不存在也可以执行，但该数据库不会立刻被新建，要等到执行了insert等的操作时，才会建立这个数据库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;show collections  // 列出当前数据库的collections(当前数据库下的表)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;db  // 显示当前数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;show users  // 列出用户&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;db.表名.insert({name:”jack”,addr:”fujian”});//向表插入字段&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;db.表名.find();//查询-作用相当于select * from 表名&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;查询数据&quot;&gt;&lt;a href=&quot;#查询数据&quot; class=&quot;headerlink&quot; title=&quot;查询数据&quot;&gt;&lt;/a&gt;查询数据&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;$lt    -&amp;gt;less then  小于&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$lte  -&amp;gt;less than and equal   不大于 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$lt    -&amp;gt;less then  小于&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$gt   -&amp;gt;greater then      大于&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$gte -&amp;gt;greater then and equal  不小于）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$ne  -&amp;gt;not equal     不等于&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;db.foo.find() // select &lt;em&gt; from foo&lt;br&gt;  db.foo.find().limit(10)  // select &lt;/em&gt; from foo limit 10&lt;br&gt;  db.foo.find().sort({x:1})  // select &lt;em&gt; from foo order by x asc  1:升序  -1:降序&lt;br&gt;  db.foo.find().sort({x:1}).skip(5).limit(10)  // select &lt;/em&gt; from foo order by x asc limit 5, 10&lt;br&gt;  db.foo.find({x:10})  // select &lt;em&gt; from foo where x = 10&lt;br&gt;  db.foo.find({x: {$lt:10}})  // select &lt;/em&gt; from foo where x &amp;lt;= 10&lt;br&gt;  db.foo.find({}, {y:true})  // select y from foo&lt;br&gt;  一些SQL不能做的，MongoDB也可以做：&lt;br&gt;  db.foo.find({“address.city”:”gz”})  // 搜索嵌套文档address中city值为gz的记录&lt;br&gt;  db.foo.find({likes:”math”})  // 搜索数组&lt;br&gt;  db.foo.ensureIndex({“address.city”:1})  // 在嵌套文档的字段上建索引&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;更新数据&quot;&gt;&lt;a href=&quot;#更新数据&quot; class=&quot;headerlink&quot; title=&quot;更新数据&quot;&gt;&lt;/a&gt;更新数据&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;db.foo.update({},{})  //更新对象，第一个参数是查询对象，第二个是替代的,可以在第二个对象里指定更新哪些字段，要使用$set。”$set”用来指定一个键的值。如果这个键不存在，则创建它，如果存在则更新&lt;/p&gt;
+&lt;p&gt;db.foo.update({name:”jack”},{$set:{name:”zky”}});&lt;/p&gt;
+&lt;h4 id=&quot;删除记录&quot;&gt;&lt;a href=&quot;#删除记录&quot; class=&quot;headerlink&quot; title=&quot;删除记录&quot;&gt;&lt;/a&gt;删除记录&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;db.foo.remove({});//第一个参数要删除的记录,只删除匹配的对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;删除数据库表&quot;&gt;&lt;a href=&quot;#删除数据库表&quot; class=&quot;headerlink&quot; title=&quot;删除数据库表&quot;&gt;&lt;/a&gt;删除数据库表&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;db.foo.drop();//删除foo这个表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;删除当前数据库&quot;&gt;&lt;a href=&quot;#删除当前数据库&quot; class=&quot;headerlink&quot; title=&quot;删除当前数据库&quot;&gt;&lt;/a&gt;删除当前数据库&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;db.dropDatebase();&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;字段操作&quot;&gt;&lt;a href=&quot;#字段操作&quot; class=&quot;headerlink&quot; title=&quot;字段操作&quot;&gt;&lt;/a&gt;字段操作&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;$push：增加数组元素；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;db.foo.update({name:’xxx’},{$push:{age:”10”}});&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;$pop：减少数组元素；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;$or，$and和$exists&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;db.people.find({“name”:”yhb”,$or:[{“age”:18},{“age”:20}]})   //找出name为yhb,age为18或者20的;&lt;/p&gt;
+&lt;p&gt;db.people.find({“addr”:{$exists:false}})      //找出不存在addr field&lt;/p&gt;
+&lt;p&gt;db.people.find({$or:[{“name”:”yhb”,”age”:18},{“name”:”lwy”,”age”:19}]})&lt;br&gt;//找出people中name为yhb，年龄为18，或者name为lwy，name为19的&lt;/p&gt;
+&lt;h4 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;如果是or： -&amp;gt;&amp;gt; {$or:[{条件1},{条件2}]}&lt;br&gt;如果是and： -&amp;gt;&amp;gt; {$and:[{条件1},{条件2}]}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;索引&quot;&gt;&lt;a href=&quot;#索引&quot; class=&quot;headerlink&quot; title=&quot;索引&quot;&gt;&lt;/a&gt;索引&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.foo.ensureIndex(&amp;#123;productid:1&amp;#125;)  // 在productid上建立普通索引&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.foo.ensureIndex(&amp;#123;district:1, plate:1&amp;#125;)  // 多字段索引&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.foo.ensureIndex(&amp;#123;productid:1&amp;#125;, &amp;#123;unique:true&amp;#125;) // 唯一索引&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;备份与恢复&quot;&gt;&lt;a href=&quot;#备份与恢复&quot; class=&quot;headerlink&quot; title=&quot;备份与恢复&quot;&gt;&lt;/a&gt;备份与恢复&lt;/h2&gt;&lt;h3 id=&quot;1-、备份工具-mongodump&quot;&gt;&lt;a href=&quot;#1-、备份工具-mongodump&quot; class=&quot;headerlink&quot; title=&quot;(1)、备份工具 mongodump;&quot;&gt;&lt;/a&gt;(1)、备份工具 mongodump;&lt;/h3&gt;&lt;p&gt;命令行执行：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c:\MongoDB\bin\mongodump.exe --help 查看帮助命令&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;示例-备份数据库：&lt;/p&gt;
+&lt;p&gt;命令行执行：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c:\MongoDB\bin\mongodump -o ../data/backup/test （备份数据到backuo/test目录下）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-、恢复数据-mongorestore&quot;&gt;&lt;a href=&quot;#2-、恢复数据-mongorestore&quot; class=&quot;headerlink&quot; title=&quot;(2)、恢复数据 mongorestore:&quot;&gt;&lt;/a&gt;(2)、恢复数据 mongorestore:&lt;/h3&gt;&lt;p&gt;示例-恢复数据库：&lt;/p&gt;
+&lt;p&gt;命令行执行：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c:\MongoDB\bin\mongorestore -d test -c t002 c:\MongoDB\data\backup\test\t002.bson&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据-导入-amp-导出&quot;&gt;&lt;a href=&quot;#数据-导入-amp-导出&quot; class=&quot;headerlink&quot; title=&quot;数据 导入&amp;amp; 导出&quot;&gt;&lt;/a&gt;数据 导入&amp;amp; 导出&lt;/h2&gt;&lt;p&gt;每次只导入\导出一个表，json或csv格式；&lt;/p&gt;
+&lt;h3 id=&quot;1-、导入-mongoimport&quot;&gt;&lt;a href=&quot;#1-、导入-mongoimport&quot; class=&quot;headerlink&quot; title=&quot;(1)、导入  mongoimport&quot;&gt;&lt;/a&gt;(1)、导入  mongoimport&lt;/h3&gt;&lt;p&gt;示例：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mongoimport -d test -c t004 drop c:\MongoDB\data\backup\test_t001.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-、导出-mongoexport&quot;&gt;&lt;a href=&quot;#2-、导出-mongoexport&quot; class=&quot;headerlink&quot; title=&quot;(2)、导出 mongoexport&quot;&gt;&lt;/a&gt;(2)、导出 mongoexport&lt;/h3&gt;&lt;p&gt;示例：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mongoexport -d test -c t001 -o c:\MongoDB\data\backup\test_t001.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安全与认证&quot;&gt;&lt;a href=&quot;#安全与认证&quot; class=&quot;headerlink&quot; title=&quot;安全与认证&quot;&gt;&lt;/a&gt;安全与认证&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;MongoDB本身是没有开启安全性检查的，在开启之前，需要至少一个管理员账号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;开启安全性检查，只有数据库认证用户才能执行读或写的操作。&lt;/p&gt;
+&lt;h4 id=&quot;增加用户&quot;&gt;&lt;a href=&quot;#增加用户&quot; class=&quot;headerlink&quot; title=&quot;增加用户&quot;&gt;&lt;/a&gt;增加用户&lt;/h4&gt;&lt;p&gt;注：V3版本mongoDB已经不再使用addUser，而是采用了db.createUser；&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;use admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.createUser(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     user: &amp;quot;accountUser&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     pwd: &amp;quot;password&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     roles: [ &amp;quot;readWrite&amp;quot;, &amp;quot;dbAdmin&amp;quot; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;对用户开启安全认证&quot;&gt;&lt;a href=&quot;#对用户开启安全认证&quot; class=&quot;headerlink&quot; title=&quot;对用户开启安全认证&quot;&gt;&lt;/a&gt;对用户开启安全认证&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1、重启客户端与服务器；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2、然后切换到客户端命令行：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;use admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.auth(&amp;quot;root&amp;quot;,&amp;quot;root&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这样，某种权限的用户只有切换到对应的数据库才能执行某些操作。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.open-open.com/lib/view/open1335003001358.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.open-open.com/lib/view/open1335003001358.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.runoob.com/mongodb/mongodb-tutorial.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.runoob.com/mongodb/mongodb-tutorial.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;MongoDB可视化客户端工具&quot;&gt;&lt;a href=&quot;#MongoDB可视化客户端工具&quot; class=&quot;headerlink&quot; title=&quot;MongoDB可视化客户端工具&quot;&gt;&lt;/a&gt;MongoDB可视化客户端工具&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;robomongo&lt;/strong&gt;  &lt;a href=&quot;https://robomongo.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://robomongo.org/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MongoDB安装&quot;&gt;&lt;a href=&quot;#MongoDB安装&quot; class=&quot;headerlink&quot; title=&quot;MongoDB安装&quot;&gt;&lt;/a&gt;MongoDB安装&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1、下载安装（&lt;a href=&quot;http://www.mongod
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://lvtraveler.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="教程" scheme="http://lvtraveler.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="MongoDB" scheme="http://lvtraveler.github.io/tags/MongoDB/"/>
+    
+      <category term="数据库" scheme="http://lvtraveler.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>《js闭包之块级作用域》</title>

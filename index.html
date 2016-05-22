@@ -268,6 +268,227 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/" itemprop="url">
+                  《MongoDB常用命令&基本操作》
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-22T10:42:33+08:00" content="2016-05-22">
+              2016-05-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h2><ul>
+<li><p>1、下载安装（<a href="http://www.mongodb.org/downloads），安装目录：c:\MongoDB" target="_blank" rel="external">http://www.mongodb.org/downloads），安装目录：c:\MongoDB</a></p>
+</li>
+<li><p>2、在c:\MongoDB下新建data\db目录</p>
+</li>
+<li><p>3、命令行运行服务端程序mongod.exe：</p>
+</li>
+</ul>
+<p>C:>cd C:\MongoDB\bin<br>C:\MongoDB\bin&gt;mongod.exe –dbpath=C:\MongoDB\data\db –directoryperdb  –logpath=C:\MongoDB\data\logs –logappend</p>
+<ul>
+<li>4、新建命令行，运行客户端程序mongo.exe (不要关闭mongod.exe这个命令行窗口)</li>
+</ul>
+<h2 id="MongoDB概念"><a href="#MongoDB概念" class="headerlink" title="MongoDB概念"></a>MongoDB概念</h2><ul>
+<li><p>databases: 数据库;</p>
+</li>
+<li><p>collections:表；（colloections组成了databases）</p>
+</li>
+<li><p>documents:行；（documents组成了collections）</p>
+</li>
+</ul>
+<blockquote>
+<p>MongoDB没有新建数据库的命令，只要进行insert或其它操作，MongoDB就会自动帮你建立数据库和collection。当查询一个不存在的collection时也不会出错，Mongo会认为那是一个空的collection。</p>
+<p>一个对象被插入到数据库中时，如果它没有ID，会自动生成一个“_id”字段，为12字节(24位)16进制数。<br>当然如果插入文档不带_id,则系统会帮你自动创建一个，如果自己指定了就用自己指定的。</p>
+</blockquote>
+<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>字段名限制：不能以“$”开头；不能包含“.”；“_id”是系统保留的字段，但用户可以自己储存唯一性的数据在字段中。</p>
+<h3 id="客户端语法："><a href="#客户端语法：" class="headerlink" title="客户端语法："></a>客户端语法：</h3><ul>
+<li><p>show dbs  // 列出所有数据库</p>
+</li>
+<li><p>use memo  // 使用数据库memo。即使这个数据库不存在也可以执行，但该数据库不会立刻被新建，要等到执行了insert等的操作时，才会建立这个数据库。</p>
+</li>
+<li><p>show collections  // 列出当前数据库的collections(当前数据库下的表)</p>
+</li>
+<li><p>db  // 显示当前数据库</p>
+</li>
+<li><p>show users  // 列出用户</p>
+</li>
+<li><p>db.表名.insert({name:”jack”,addr:”fujian”});//向表插入字段</p>
+</li>
+<li><p>db.表名.find();//查询-作用相当于select * from 表名</p>
+</li>
+</ul>
+<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><ul>
+<li><p>$lt    -&gt;less then  小于</p>
+</li>
+<li><p>$lte  -&gt;less than and equal   不大于 </p>
+</li>
+<li><p>$lt    -&gt;less then  小于</p>
+</li>
+<li><p>$gt   -&gt;greater then      大于</p>
+</li>
+<li><p>$gte -&gt;greater then and equal  不小于）</p>
+</li>
+<li><p>$ne  -&gt;not equal     不等于</p>
+</li>
+</ul>
+<blockquote>
+<p>db.foo.find() // select <em> from foo<br>  db.foo.find().limit(10)  // select </em> from foo limit 10<br>  db.foo.find().sort({x:1})  // select <em> from foo order by x asc  1:升序  -1:降序<br>  db.foo.find().sort({x:1}).skip(5).limit(10)  // select </em> from foo order by x asc limit 5, 10<br>  db.foo.find({x:10})  // select <em> from foo where x = 10<br>  db.foo.find({x: {$lt:10}})  // select </em> from foo where x &lt;= 10<br>  db.foo.find({}, {y:true})  // select y from foo<br>  一些SQL不能做的，MongoDB也可以做：<br>  db.foo.find({“address.city”:”gz”})  // 搜索嵌套文档address中city值为gz的记录<br>  db.foo.find({likes:”math”})  // 搜索数组<br>  db.foo.ensureIndex({“address.city”:1})  // 在嵌套文档的字段上建索引</p>
+</blockquote>
+<h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><ul>
+<li><p>db.foo.update({},{})  //更新对象，第一个参数是查询对象，第二个是替代的,可以在第二个对象里指定更新哪些字段，要使用$set。”$set”用来指定一个键的值。如果这个键不存在，则创建它，如果存在则更新</p>
+<p>db.foo.update({name:”jack”},{$set:{name:”zky”}});</p>
+<h4 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h4></li>
+<li><p>db.foo.remove({});//第一个参数要删除的记录,只删除匹配的对象</p>
+</li>
+</ul>
+<h4 id="删除数据库表"><a href="#删除数据库表" class="headerlink" title="删除数据库表"></a>删除数据库表</h4><ul>
+<li>db.foo.drop();//删除foo这个表</li>
+</ul>
+<h4 id="删除当前数据库"><a href="#删除当前数据库" class="headerlink" title="删除当前数据库"></a>删除当前数据库</h4><ul>
+<li>db.dropDatebase();</li>
+</ul>
+<h4 id="字段操作"><a href="#字段操作" class="headerlink" title="字段操作"></a>字段操作</h4><ul>
+<li>$push：增加数组元素；</li>
+</ul>
+<p>db.foo.update({name:’xxx’},{$push:{age:”10”}});</p>
+<ul>
+<li><p>$pop：减少数组元素；</p>
+</li>
+<li><p>$or，$and和$exists</p>
+</li>
+</ul>
+<p>db.people.find({“name”:”yhb”,$or:[{“age”:18},{“age”:20}]})   //找出name为yhb,age为18或者20的;</p>
+<p>db.people.find({“addr”:{$exists:false}})      //找出不存在addr field</p>
+<p>db.people.find({$or:[{“name”:”yhb”,”age”:18},{“name”:”lwy”,”age”:19}]})<br>//找出people中name为yhb，年龄为18，或者name为lwy，name为19的</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><blockquote>
+<p>如果是or： -&gt;&gt; {$or:[{条件1},{条件2}]}<br>如果是and： -&gt;&gt; {$and:[{条件1},{条件2}]}</p>
+</blockquote>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;productid:1&#125;)  // 在productid上建立普通索引</span><br><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;district:1, plate:1&#125;)  // 多字段索引</span><br><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;productid:1&#125;, &#123;unique:true&#125;) // 唯一索引</span><br></pre></td></tr></table></figure>
+<h2 id="备份与恢复"><a href="#备份与恢复" class="headerlink" title="备份与恢复"></a>备份与恢复</h2><h3 id="1-、备份工具-mongodump"><a href="#1-、备份工具-mongodump" class="headerlink" title="(1)、备份工具 mongodump;"></a>(1)、备份工具 mongodump;</h3><p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongodump.exe --help 查看帮助命令</span><br></pre></td></tr></table></figure></p>
+<p>示例-备份数据库：</p>
+<p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongodump -o ../data/backup/test （备份数据到backuo/test目录下）</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-、恢复数据-mongorestore"><a href="#2-、恢复数据-mongorestore" class="headerlink" title="(2)、恢复数据 mongorestore:"></a>(2)、恢复数据 mongorestore:</h3><p>示例-恢复数据库：</p>
+<p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongorestore -d test -c t002 c:\MongoDB\data\backup\test\t002.bson</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据-导入-amp-导出"><a href="#数据-导入-amp-导出" class="headerlink" title="数据 导入&amp; 导出"></a>数据 导入&amp; 导出</h2><p>每次只导入\导出一个表，json或csv格式；</p>
+<h3 id="1-、导入-mongoimport"><a href="#1-、导入-mongoimport" class="headerlink" title="(1)、导入  mongoimport"></a>(1)、导入  mongoimport</h3><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoimport -d test -c t004 drop c:\MongoDB\data\backup\test_t001.json</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-、导出-mongoexport"><a href="#2-、导出-mongoexport" class="headerlink" title="(2)、导出 mongoexport"></a>(2)、导出 mongoexport</h3><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoexport -d test -c t001 -o c:\MongoDB\data\backup\test_t001.json</span><br></pre></td></tr></table></figure></p>
+<h2 id="安全与认证"><a href="#安全与认证" class="headerlink" title="安全与认证"></a>安全与认证</h2><blockquote>
+<p>MongoDB本身是没有开启安全性检查的，在开启之前，需要至少一个管理员账号。</p>
+</blockquote>
+<p>开启安全性检查，只有数据库认证用户才能执行读或写的操作。</p>
+<h4 id="增加用户"><a href="#增加用户" class="headerlink" title="增加用户"></a>增加用户</h4><p>注：V3版本mongoDB已经不再使用addUser，而是采用了db.createUser；</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line"></span><br><span class="line">db.createUser(</span><br><span class="line">   &#123;</span><br><span class="line">     user: &quot;accountUser&quot;,</span><br><span class="line">     pwd: &quot;password&quot;,</span><br><span class="line">     roles: [ &quot;readWrite&quot;, &quot;dbAdmin&quot; ]</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="对用户开启安全认证"><a href="#对用户开启安全认证" class="headerlink" title="对用户开启安全认证"></a>对用户开启安全认证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1、重启客户端与服务器；</span><br><span class="line"></span><br><span class="line">2、然后切换到客户端命令行：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">use admin</span><br><span class="line"></span><br><span class="line">db.auth(&quot;root&quot;,&quot;root&quot;)</span><br><span class="line"></span><br><span class="line">这样，某种权限的用户只有切换到对应的数据库才能执行某些操作。</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.open-open.com/lib/view/open1335003001358.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1335003001358.html</a></p>
+<p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">http://www.runoob.com/mongodb/mongodb-tutorial.html</a></p>
+<h2 id="MongoDB可视化客户端工具"><a href="#MongoDB可视化客户端工具" class="headerlink" title="MongoDB可视化客户端工具"></a>MongoDB可视化客户端工具</h2><p><strong>robomongo</strong>  <a href="https://robomongo.org/" target="_blank" rel="external">https://robomongo.org/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/07/js闭包之块级作用域/" itemprop="url">
                   《js闭包之块级作用域》
                 </a>
@@ -1803,7 +2024,7 @@ FALLBACK
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1811,7 +2032,7 @@ FALLBACK
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1820,7 +2041,7 @@ FALLBACK
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

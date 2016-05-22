@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="阅读,历史/文学," />
+  <meta name="keywords" content="教程,MongoDB,数据库," />
 
 
 
@@ -59,22 +59,40 @@
 
 
 
-<meta name="description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
+<meta name="description" content="MongoDB安装
+1、下载安装（http://www.mongodb.org/downloads），安装目录：c:\MongoDB
 
-OK，">
+2、在c:\MongoDB下新建data\db目录
+
+3、命令行运行服务端程序mongod.exe：
+
+
+C:&amp;gt;cd C:\MongoDB\binC:\MongoDB\bin&amp;gt;mongod.exe –dbpath=C:\MongoDB\data\db –di">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
-<meta property="og:url" content="http://lvtraveler.github.io/2016/04/24/楚亡/index.html">
+<meta property="og:title" content="《MongoDB常用命令&基本操作》">
+<meta property="og:url" content="http://lvtraveler.github.io/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/index.html">
 <meta property="og:site_name" content="Imagine">
-<meta property="og:description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
+<meta property="og:description" content="MongoDB安装
+1、下载安装（http://www.mongodb.org/downloads），安装目录：c:\MongoDB
 
-OK，">
-<meta property="og:updated_time" content="2016-04-24T16:02:40.000Z">
+2、在c:\MongoDB下新建data\db目录
+
+3、命令行运行服务端程序mongod.exe：
+
+
+C:&amp;gt;cd C:\MongoDB\binC:\MongoDB\bin&amp;gt;mongod.exe –dbpath=C:\MongoDB\data\db –di">
+<meta property="og:updated_time" content="2016-05-22T02:45:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败">
-<meta name="twitter:description" content="最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。
+<meta name="twitter:title" content="《MongoDB常用命令&基本操作》">
+<meta name="twitter:description" content="MongoDB安装
+1、下载安装（http://www.mongodb.org/downloads），安装目录：c:\MongoDB
 
-OK，">
+2、在c:\MongoDB下新建data\db目录
+
+3、命令行运行服务端程序mongod.exe：
+
+
+C:&amp;gt;cd C:\MongoDB\binC:\MongoDB\bin&amp;gt;mongod.exe –dbpath=C:\MongoDB\data\db –di">
 
 
 
@@ -92,7 +110,7 @@ OK，">
   };
 </script>
 
-  <title> 《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败 | Imagine </title>
+  <title> 《MongoDB常用命令&基本操作》 | Imagine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +290,7 @@ OK，">
             
             
               
-                《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败
+                《MongoDB常用命令&基本操作》
               
             
           </h1>
@@ -284,8 +302,8 @@ OK，">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T23:22:15+08:00" content="2016-04-24">
-              2016-04-24
+            <time itemprop="dateCreated" datetime="2016-05-22T10:42:33+08:00" content="2016-05-22">
+              2016-05-22
             </time>
           </span>
 
@@ -298,8 +316,8 @@ OK，">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -314,8 +332,8 @@ OK，">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/24/楚亡/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/楚亡/" itemprop="commentsCount"></span>
+                <a href="/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,43 +355,113 @@ OK，">
       
 
       
-        <p>最近看了一本讲历史的文学书，书名《楚亡·从项羽到韩信》，作者李开元。为什么会去看这本书呢？说来也凑巧，在我上高中的时候偶然间在电视上看到《秦时明月》这部国产动漫，我本身对历史记得不太牢，很多历史在读书的时候杂揉在一起，于是就没有太多印象了，但是看这部动漫的时候，诶~感觉还不错，于是就看到现在。哈哈。但我也不是什么秦迷啦~我感觉自己只是对这段历史是想了解的。虽然，这部动漫很多剧情是虚构的。</p>
-<blockquote>
-<p>OK，既然说要“重新梳理楚汉之争”，那么我们就来聊聊楚汉之争。</p>
-</blockquote>
-<p>首先，想问问楚汉争霸中都有哪些主要人物？（不得不赞叹，历史是为天下豪杰写的）项羽、刘邦肯定的了，然后你从这本书名还可以找到韩信这个人，还有呢？————————我们从项羽的楚军和刘邦的汉军来找找这些人。我们根据这几个主要人物来讲楚汉之争。</p>
-<p>从两位头头开始吧。</p>
-<p>项羽。这个人很厉害，西楚霸王，在项羽败亡之前吟唱的《垓(gai)下歌》中，他都这么自夸自己：‘力拔山兮气盖世,时不利兮骓（zhui,’马’）不逝.骓不逝兮可奈何,虞兮虞兮奈若何！’在开头第一句，他就说了’力拔山兮气盖世’，意思是“老子是盖世英雄，力大无穷能开山”，但是项羽的厉害不止是力气大。——————谁能说说项羽还有哪里厉害的地方呢？取了一位美貌天仙的虞姬？还是他在乌江自刎时那句豪言壮语？</p>
-<p>————————项羽是位军人，身上满满军人的血气，自幼跟着叔父项梁打战，在对秦战争中从未有过败仗，多次以少胜多，全歼秦军，在大规模野战中更是得心应手，有如神助。例如：在一次单刀中，项羽骑着坐骑乌骓，对方将领看到项羽瞪了自己一眼，立马吓得魂不守舍，回到阵营不敢出战。在几个著名的战役——如“巨鹿之战大破秦军，项羽破斧沉舟以5万楚军大胜40万秦军，从此确立项羽在反秦联盟中得地位；彭城之战大败刘邦，使刘邦从此不敢与项羽正面交锋”，可以看得出项羽在大战的时候是很有自信的。</p>
-<p>但是，唯有这一次——垓下之战，让项羽犹如困在牢笼中感到很不舒服，项羽对部下直言：“这是上天要亡我，而非征战之过错啊！”。项羽很是无奈啊~对了，我们前面说到过项羽在临死前说了一句豪言壮语，这句话也能体现出他的勇气。项羽站在乌江边，对着迎面而来的吕马童喊道：“我听说汉王赏金千金，封邑(yi)万户,要我的头，我成全你！”说完挥剑自刎，年仅31岁。其实，在乌江边上，早有船家在等候项羽过江，但是项羽拒绝了，他说道：“既然天要亡我，又何必渡江！遥想当年八千江东子弟随我渡江西进，如今无一人生还，纵使江东父老兄弟怜爱不弃，仍以我为王，我又有何脸面去见他们？纵使江东父老兄弟默默不言语，我项籍岂能问心无愧啊！”。</p>
-<blockquote>
-<p>哈哈~英雄，往往因为几句气壮山河的话语让世人铭记。。。</p>
-</blockquote>
-<p>前面我们说了项羽的厉害之处，有人会问，项羽这么屌，最终为什么会败呢？</p>
-<p>我们来说说项羽失败的几处不完全原因：</p>
-<p>在荥（xing）阳之战中，两军对峙，项羽一心想引诱刘邦出城会战，刘邦可不干，但是这么一直对峙下去也不是办法，就对项羽喊话：“我刘季宁愿斗志，不能斗力。”，接着高声宣读项羽的十大罪状，我列举主要几条：</p>
-<ul>
-<li>第一条：项羽违背与刘邦定下的约定：“先入关中者作关中王”；</li>
-<li>第二条：违背与楚怀王“进入秦国不得暴掠”的约定，项羽进入关中后，烧毁了秦国的宫殿，破坏秦始皇墓地上的建筑，搜刮财宝据为己有；</li>
-<li>第三条：暴虐欺诈，在新安坑杀20万秦军将士；</li>
-<li>第四条：驱逐义帝楚怀王，并派人秘密杀害义帝于江南；</li>
+        <h2 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h2><ul>
+<li><p>1、下载安装（<a href="http://www.mongodb.org/downloads），安装目录：c:\MongoDB" target="_blank" rel="external">http://www.mongodb.org/downloads），安装目录：c:\MongoDB</a></p>
+</li>
+<li><p>2、在c:\MongoDB下新建data\db目录</p>
+</li>
+<li><p>3、命令行运行服务端程序mongod.exe：</p>
+</li>
 </ul>
-<p>从上面几条来看，我们能看到项羽的性格缺失：不守信、不敬上、大逆无道、功高自傲；</p>
-<p>史太公司马迁在项羽败亡的百年之后，曾总结过项羽失败的原因：</p>
+<p>C:>cd C:\MongoDB\bin<br>C:\MongoDB\bin&gt;mongod.exe –dbpath=C:\MongoDB\data\db –directoryperdb  –logpath=C:\MongoDB\data\logs –logappend</p>
 <ul>
-<li>战略地理错误：背弃关中，定都彭城；</li>
-<li>政治伦理错误：驱逐楚怀王，以下克上；</li>
-<li>居功自傲：固执己见，不向历史学习；</li>
-<li>以武力经营天下；</li>
+<li>4、新建命令行，运行客户端程序mongo.exe (不要关闭mongod.exe这个命令行窗口)</li>
 </ul>
-<p>几千年以来，历史学家们都对项羽的失败做出了不同的评价，可是于己所见，综上项羽所做过的事，可以见得项羽在楚汉之争中渐渐失去了人心，在垓下之战后诸侯国纷纷离他而去，项羽最终失去了帮手，孤军奋战。可见“失人心者失天下”、“水能载舟，亦能覆舟”。</p>
-<p>当然，从用人这个角度看，也是项羽失败的原因之一：</p>
-<p>项羽身边的文武官，大都是由项羽的家族人士来担当，例如项梁、项伯、项庄，亚父范增，发小龙且等寥寥数人；</p>
-<p>《史记》中记载陈平的一句话，陈平向刘邦献计说：“项王的忠臣，只有范增、钟离眛、龙且、周殷几个人，如果你能用万金买通说客，去离间他们的君臣关系，再出兵攻打，项王必败。”刘邦遂用此计。项羽果然对忠臣疑忌，致使范增、钟离眛、周殷等忠臣纷纷离去，几乎只有龙且没有离开。”</p>
-<p>由此可见，人才计划在一个国家或是企业尤为重要！</p>
+<h2 id="MongoDB概念"><a href="#MongoDB概念" class="headerlink" title="MongoDB概念"></a>MongoDB概念</h2><ul>
+<li><p>databases: 数据库;</p>
+</li>
+<li><p>collections:表；（colloections组成了databases）</p>
+</li>
+<li><p>documents:行；（documents组成了collections）</p>
+</li>
+</ul>
 <blockquote>
-<p>那么，刘邦为什么能胜？这个我们放到下期来讲~ 回见！</p>
+<p>MongoDB没有新建数据库的命令，只要进行insert或其它操作，MongoDB就会自动帮你建立数据库和collection。当查询一个不存在的collection时也不会出错，Mongo会认为那是一个空的collection。</p>
+<p>一个对象被插入到数据库中时，如果它没有ID，会自动生成一个“_id”字段，为12字节(24位)16进制数。<br>当然如果插入文档不带_id,则系统会帮你自动创建一个，如果自己指定了就用自己指定的。</p>
 </blockquote>
+<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>字段名限制：不能以“$”开头；不能包含“.”；“_id”是系统保留的字段，但用户可以自己储存唯一性的数据在字段中。</p>
+<h3 id="客户端语法："><a href="#客户端语法：" class="headerlink" title="客户端语法："></a>客户端语法：</h3><ul>
+<li><p>show dbs  // 列出所有数据库</p>
+</li>
+<li><p>use memo  // 使用数据库memo。即使这个数据库不存在也可以执行，但该数据库不会立刻被新建，要等到执行了insert等的操作时，才会建立这个数据库。</p>
+</li>
+<li><p>show collections  // 列出当前数据库的collections(当前数据库下的表)</p>
+</li>
+<li><p>db  // 显示当前数据库</p>
+</li>
+<li><p>show users  // 列出用户</p>
+</li>
+<li><p>db.表名.insert({name:”jack”,addr:”fujian”});//向表插入字段</p>
+</li>
+<li><p>db.表名.find();//查询-作用相当于select * from 表名</p>
+</li>
+</ul>
+<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><ul>
+<li><p>$lt    -&gt;less then  小于</p>
+</li>
+<li><p>$lte  -&gt;less than and equal   不大于 </p>
+</li>
+<li><p>$lt    -&gt;less then  小于</p>
+</li>
+<li><p>$gt   -&gt;greater then      大于</p>
+</li>
+<li><p>$gte -&gt;greater then and equal  不小于）</p>
+</li>
+<li><p>$ne  -&gt;not equal     不等于</p>
+</li>
+</ul>
+<blockquote>
+<p>db.foo.find() // select <em> from foo<br>  db.foo.find().limit(10)  // select </em> from foo limit 10<br>  db.foo.find().sort({x:1})  // select <em> from foo order by x asc  1:升序  -1:降序<br>  db.foo.find().sort({x:1}).skip(5).limit(10)  // select </em> from foo order by x asc limit 5, 10<br>  db.foo.find({x:10})  // select <em> from foo where x = 10<br>  db.foo.find({x: {$lt:10}})  // select </em> from foo where x &lt;= 10<br>  db.foo.find({}, {y:true})  // select y from foo<br>  一些SQL不能做的，MongoDB也可以做：<br>  db.foo.find({“address.city”:”gz”})  // 搜索嵌套文档address中city值为gz的记录<br>  db.foo.find({likes:”math”})  // 搜索数组<br>  db.foo.ensureIndex({“address.city”:1})  // 在嵌套文档的字段上建索引</p>
+</blockquote>
+<h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><ul>
+<li><p>db.foo.update({},{})  //更新对象，第一个参数是查询对象，第二个是替代的,可以在第二个对象里指定更新哪些字段，要使用$set。”$set”用来指定一个键的值。如果这个键不存在，则创建它，如果存在则更新</p>
+<p>db.foo.update({name:”jack”},{$set:{name:”zky”}});</p>
+<h4 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h4></li>
+<li><p>db.foo.remove({});//第一个参数要删除的记录,只删除匹配的对象</p>
+</li>
+</ul>
+<h4 id="删除数据库表"><a href="#删除数据库表" class="headerlink" title="删除数据库表"></a>删除数据库表</h4><ul>
+<li>db.foo.drop();//删除foo这个表</li>
+</ul>
+<h4 id="删除当前数据库"><a href="#删除当前数据库" class="headerlink" title="删除当前数据库"></a>删除当前数据库</h4><ul>
+<li>db.dropDatebase();</li>
+</ul>
+<h4 id="字段操作"><a href="#字段操作" class="headerlink" title="字段操作"></a>字段操作</h4><ul>
+<li>$push：增加数组元素；</li>
+</ul>
+<p>db.foo.update({name:’xxx’},{$push:{age:”10”}});</p>
+<ul>
+<li><p>$pop：减少数组元素；</p>
+</li>
+<li><p>$or，$and和$exists</p>
+</li>
+</ul>
+<p>db.people.find({“name”:”yhb”,$or:[{“age”:18},{“age”:20}]})   //找出name为yhb,age为18或者20的;</p>
+<p>db.people.find({“addr”:{$exists:false}})      //找出不存在addr field</p>
+<p>db.people.find({$or:[{“name”:”yhb”,”age”:18},{“name”:”lwy”,”age”:19}]})<br>//找出people中name为yhb，年龄为18，或者name为lwy，name为19的</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><blockquote>
+<p>如果是or： -&gt;&gt; {$or:[{条件1},{条件2}]}<br>如果是and： -&gt;&gt; {$and:[{条件1},{条件2}]}</p>
+</blockquote>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;productid:1&#125;)  // 在productid上建立普通索引</span><br><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;district:1, plate:1&#125;)  // 多字段索引</span><br><span class="line"></span><br><span class="line">db.foo.ensureIndex(&#123;productid:1&#125;, &#123;unique:true&#125;) // 唯一索引</span><br></pre></td></tr></table></figure>
+<h2 id="备份与恢复"><a href="#备份与恢复" class="headerlink" title="备份与恢复"></a>备份与恢复</h2><h3 id="1-、备份工具-mongodump"><a href="#1-、备份工具-mongodump" class="headerlink" title="(1)、备份工具 mongodump;"></a>(1)、备份工具 mongodump;</h3><p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongodump.exe --help 查看帮助命令</span><br></pre></td></tr></table></figure></p>
+<p>示例-备份数据库：</p>
+<p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongodump -o ../data/backup/test （备份数据到backuo/test目录下）</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-、恢复数据-mongorestore"><a href="#2-、恢复数据-mongorestore" class="headerlink" title="(2)、恢复数据 mongorestore:"></a>(2)、恢复数据 mongorestore:</h3><p>示例-恢复数据库：</p>
+<p>命令行执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\MongoDB\bin\mongorestore -d test -c t002 c:\MongoDB\data\backup\test\t002.bson</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据-导入-amp-导出"><a href="#数据-导入-amp-导出" class="headerlink" title="数据 导入&amp; 导出"></a>数据 导入&amp; 导出</h2><p>每次只导入\导出一个表，json或csv格式；</p>
+<h3 id="1-、导入-mongoimport"><a href="#1-、导入-mongoimport" class="headerlink" title="(1)、导入  mongoimport"></a>(1)、导入  mongoimport</h3><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoimport -d test -c t004 drop c:\MongoDB\data\backup\test_t001.json</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-、导出-mongoexport"><a href="#2-、导出-mongoexport" class="headerlink" title="(2)、导出 mongoexport"></a>(2)、导出 mongoexport</h3><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoexport -d test -c t001 -o c:\MongoDB\data\backup\test_t001.json</span><br></pre></td></tr></table></figure></p>
+<h2 id="安全与认证"><a href="#安全与认证" class="headerlink" title="安全与认证"></a>安全与认证</h2><blockquote>
+<p>MongoDB本身是没有开启安全性检查的，在开启之前，需要至少一个管理员账号。</p>
+</blockquote>
+<p>开启安全性检查，只有数据库认证用户才能执行读或写的操作。</p>
+<h4 id="增加用户"><a href="#增加用户" class="headerlink" title="增加用户"></a>增加用户</h4><p>注：V3版本mongoDB已经不再使用addUser，而是采用了db.createUser；</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line"></span><br><span class="line">db.createUser(</span><br><span class="line">   &#123;</span><br><span class="line">     user: &quot;accountUser&quot;,</span><br><span class="line">     pwd: &quot;password&quot;,</span><br><span class="line">     roles: [ &quot;readWrite&quot;, &quot;dbAdmin&quot; ]</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="对用户开启安全认证"><a href="#对用户开启安全认证" class="headerlink" title="对用户开启安全认证"></a>对用户开启安全认证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1、重启客户端与服务器；</span><br><span class="line"></span><br><span class="line">2、然后切换到客户端命令行：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">use admin</span><br><span class="line"></span><br><span class="line">db.auth(&quot;root&quot;,&quot;root&quot;)</span><br><span class="line"></span><br><span class="line">这样，某种权限的用户只有切换到对应的数据库才能执行某些操作。</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.open-open.com/lib/view/open1335003001358.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1335003001358.html</a></p>
+<p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">http://www.runoob.com/mongodb/mongodb-tutorial.html</a></p>
+<h2 id="MongoDB可视化客户端工具"><a href="#MongoDB可视化客户端工具" class="headerlink" title="MongoDB可视化客户端工具"></a>MongoDB可视化客户端工具</h2><p><strong>robomongo</strong>  <a href="https://robomongo.org/" target="_blank" rel="external">https://robomongo.org/</a></p>
 
       
     </div>
@@ -388,9 +476,11 @@ OK，">
       
         <div class="post-tags">
           
-            <a href="/tags/阅读/" rel="tag">#阅读</a>
+            <a href="/tags/教程/" rel="tag">#教程</a>
           
-            <a href="/tags/历史-文学/" rel="tag">#历史/文学</a>
+            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+          
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
           
         </div>
       
@@ -399,17 +489,13 @@ OK，">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/分成两半的子爵/" rel="next" title="《分成两半的子爵》">
-                <i class="fa fa-chevron-left"></i> 《分成两半的子爵》
+              <a href="/2016/05/07/js闭包之块级作用域/" rel="next" title="《js闭包之块级作用域》">
+                <i class="fa fa-chevron-left"></i> 《js闭包之块级作用域》
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/05/angular-实例01/" rel="prev" title="《AngularJS实例-01》">
-                《AngularJS实例-01》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -424,10 +510,10 @@ OK，">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/24/楚亡/"
-     data-title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败"
+        <div class="ds-share flat" data-thread-key="2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/"
+     data-title="《MongoDB常用命令&基本操作》"
      data-content=""
-     data-url="http://lvtraveler.github.io/2016/04/24/楚亡/">
+     data-url="http://lvtraveler.github.io/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -454,8 +540,8 @@ OK，">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/24/楚亡/"
-           data-title="《楚亡·从项羽到韩信》——重新梳理楚汉之争01___项羽为什么失败" data-url="http://lvtraveler.github.io/2016/04/24/楚亡/">
+      <div class="ds-thread" data-thread-key="2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/"
+           data-title="《MongoDB常用命令&基本操作》" data-url="http://lvtraveler.github.io/2016/05/22/【MongoDB】MongoDB入门（一）基本操作-常用命令/">
       </div>
     
   </div>
@@ -585,7 +671,7 @@ OK，">
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB安装"><span class="nav-number">1.</span> <span class="nav-text">MongoDB安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB概念"><span class="nav-number">2.</span> <span class="nav-text">MongoDB概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命名"><span class="nav-number">2.1.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端语法："><span class="nav-number">2.2.</span> <span class="nav-text">客户端语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除记录"><span class="nav-number">2.2.3.</span> <span class="nav-text">删除记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据库表"><span class="nav-number">2.2.4.</span> <span class="nav-text">删除数据库表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除当前数据库"><span class="nav-number">2.2.5.</span> <span class="nav-text">删除当前数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字段操作"><span class="nav-number">2.2.6.</span> <span class="nav-text">字段操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">2.2.7.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引"><span class="nav-number">2.2.8.</span> <span class="nav-text">索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份与恢复"><span class="nav-number">3.</span> <span class="nav-text">备份与恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-、备份工具-mongodump"><span class="nav-number">3.1.</span> <span class="nav-text">(1)、备份工具 mongodump;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-、恢复数据-mongorestore"><span class="nav-number">3.2.</span> <span class="nav-text">(2)、恢复数据 mongorestore:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据-导入-amp-导出"><span class="nav-number">4.</span> <span class="nav-text">数据 导入& 导出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-、导入-mongoimport"><span class="nav-number">4.1.</span> <span class="nav-text">(1)、导入  mongoimport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-、导出-mongoexport"><span class="nav-number">4.2.</span> <span class="nav-text">(2)、导出 mongoexport</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全与认证"><span class="nav-number">5.</span> <span class="nav-text">安全与认证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加用户"><span class="nav-number">5.0.1.</span> <span class="nav-text">增加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对用户开启安全认证"><span class="nav-number">5.0.2.</span> <span class="nav-text">对用户开启安全认证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB可视化客户端工具"><span class="nav-number">7.</span> <span class="nav-text">MongoDB可视化客户端工具</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

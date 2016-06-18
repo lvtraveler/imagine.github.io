@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvtraveler.github.io/"/>
-  <updated>2016-06-18T08:25:46.000Z</updated>
+  <updated>2016-06-18T08:29:52.000Z</updated>
   <id>http://lvtraveler.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://lvtraveler.github.io/2016/06/18/javascript%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86/"/>
     <id>http://lvtraveler.github.io/2016/06/18/javascript代码规范整理/</id>
     <published>2016-06-18T07:05:18.000Z</published>
-    <updated>2016-06-18T08:25:46.000Z</updated>
+    <updated>2016-06-18T08:29:52.000Z</updated>
     
     <content type="html">&lt;p&gt;基于参考，对参考文档进行整理，方便参照，有建议之处，欢迎留言。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -168,11 +168,13 @@
 &lt;p&gt;使用with语句速度要比不使用with语句的等价代码的速度慢得多,90%(或者更高比例)的with应用场景都可以用其他更好的方式代替。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_CN&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_CN&lt;/a&gt; (idiomatic代码风格)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hbxeagle/JavaScriptStyleGuide&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hbxeagle/JavaScriptStyleGuide&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hbxeagle/JavaScriptStyleGuide(代码规范指导&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/hbxeagle/JavaScriptStyleGuide(代码规范指导&lt;/a&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/adamlu/javascript-style-guide&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/adamlu/javascript-style-guide&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://javascript.ruanyifeng.com/grammar/style.html(阮一峰-代码风格&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://javascript.ruanyifeng.com/grammar/style.html(阮一峰-代码风格&lt;/a&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
@@ -322,11 +324,11 @@
       <category term="数据库" scheme="http://lvtraveler.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
+      <category term="教程" scheme="http://lvtraveler.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="MongoDB" scheme="http://lvtraveler.github.io/tags/MongoDB/"/>
     
       <category term="数据库" scheme="http://lvtraveler.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="教程" scheme="http://lvtraveler.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -448,11 +450,11 @@
       <category term="javascript" scheme="http://lvtraveler.github.io/categories/javascript/"/>
     
     
-      <category term="教程" scheme="http://lvtraveler.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="实例" scheme="http://lvtraveler.github.io/tags/%E5%AE%9E%E4%BE%8B/"/>
     
       <category term="angular" scheme="http://lvtraveler.github.io/tags/angular/"/>
+    
+      <category term="教程" scheme="http://lvtraveler.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
